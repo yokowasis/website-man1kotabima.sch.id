@@ -1,13 +1,14 @@
 import Head from "next/head";
-import { settings } from "../../settings";
 import PostType from "../../interfaces/post";
 import Link from "next/link";
+import { Settings } from "../../settings";
 
 type Props = {
   posts: PostType[];
+  settings: Settings;
 };
 
-const EduIndex = ({ posts }: Props) => {
+const EduIndex = ({ posts, settings }: Props) => {
   return (
     <>
       <Head>

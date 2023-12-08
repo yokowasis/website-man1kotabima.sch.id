@@ -45,3 +45,6 @@ export const settings = {
     ],
   },
 };
+
+// infer type from settings
+export type Settings = typeof settings;

@@ -2,13 +2,14 @@ import { getAllPosts } from "../lib/api";
 import Post from "../interfaces/post";
 import EduIndex from "../components/edu";
 import Head from "next/head";
-import { settings } from "../settings";
+import { Settings, settings } from "../settings";
 
 type Props = {
   allPosts: Post[];
+  s: Settings;
 };
 
-export default function Index({ allPosts }: Props) {
+export default function Index({ allPosts, s }: Props) {
   return (
     <>
       {/* <Layout>
@@ -31,9 +32,9 @@ export default function Index({ allPosts }: Props) {
         </Container>
       </Layout> */}
       <Head>
-        <title>Official Website {settings.InfoSekolah.Nama}</title>
+        <title>Official Website {s.InfoSekolah.Nama}</title>
       </Head>
-      <EduIndex posts={allPosts} />
+      <EduIndex posts={allPosts} settings={s} />
     </>
   );
 }
@@ -49,6 +50,6 @@ export const getStaticProps = async () => {
   ]);
 
   return {
-    props: { allPosts },
+    props: { allPosts, s: settings },
   };
 };
