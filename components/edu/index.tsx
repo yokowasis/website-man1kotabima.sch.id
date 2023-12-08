@@ -1,6 +1,13 @@
 import Head from "next/head";
+import { settings } from "../../settings";
+import PostType from "../../interfaces/post";
+import Link from "next/link";
 
-const EduIndex = () => {
+type Props = {
+  posts: PostType[];
+};
+
+const EduIndex = ({ posts }: Props) => {
   return (
     <>
       <Head>
@@ -8,22 +15,9 @@ const EduIndex = () => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <link rel="pingback" href="https://man1.dev.app.web.id/xmlrpc.php" />
 
-        <title>Home | Web MAN 1 Kota Bima</title>
+        <title>Home | Web {settings.InfoSekolah.Nama}</title>
         <meta name="robots" content="max-image-preview:large" />
 
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="Web MAN 1 Kota Bima » Feed"
-          href="https://man1.dev.app.web.id/feed/"
-        />
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="Web MAN 1 Kota Bima » Comments Feed"
-          href="https://man1.dev.app.web.id/comments/feed/"
-        />
-        <meta content="Divi v.4.23.1" name="generator" />
         <link rel="stylesheet" href="/index.css" type="text/css" media="all" />
         <link
           rel="stylesheet"
@@ -46,34 +40,6 @@ const EduIndex = () => {
           type="text/css"
           media="all"
         />
-        <link
-          rel="https://api.w.org/"
-          href="https://man1.dev.app.web.id/wp-json/"
-        />
-        <link
-          rel="alternate"
-          type="application/json"
-          href="https://man1.dev.app.web.id/wp-json/wp/v2/pages/9"
-        />
-        <link
-          rel="EditURI"
-          type="application/rsd+xml"
-          title="RSD"
-          href="https://man1.dev.app.web.id/xmlrpc.php?rsd"
-        />
-        <meta name="generator" content="WordPress 6.4.2" />
-        <link rel="canonical" href="https://man1.dev.app.web.id/home/" />
-        <link rel="shortlink" href="https://man1.dev.app.web.id/?p=9" />
-        <link
-          rel="alternate"
-          type="application/json+oembed"
-          href="https://man1.dev.app.web.id/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fman1.dev.app.web.id%2Fhome%2F"
-        />
-        <link
-          rel="alternate"
-          type="text/xml+oembed"
-          href="https://man1.dev.app.web.id/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fman1.dev.app.web.id%2Fhome%2F&amp;format=xml"
-        />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
@@ -95,7 +61,12 @@ const EduIndex = () => {
               <div className="entry-content">
                 <div className="et-l et-l--post">
                   <div className="et_builder_inner_content et_pb_gutters3">
-                    <div className="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular">
+                    <div
+                      className="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular"
+                      style={{
+                        backgroundImage: `linear-gradient(90deg, #8300e9 0%, rgba(0, 0, 0, 0) 100%),url('${settings.HomeBackground}') !important`,
+                      }}
+                    >
                       <div className="et_pb_row et_pb_row_0">
                         <div className="et_pb_column et_pb_column_4_4 et_pb_column_0 et_pb_css_mix_blend_mode_passthrough et-last-child">
                           <div className="et_pb_module et_pb_divider_0 et_pb_space et_pb_divider_hidden">
@@ -103,7 +74,7 @@ const EduIndex = () => {
                           </div>
                           <div className="et_pb_module et_pb_text et_pb_text_0 et_pb_text_align_left et_pb_bg_layout_light">
                             <div className="et_pb_text_inner">
-                              <h1>Welcome To MAN 1 Kota Bima</h1>
+                              <h1>Welcome To {settings.InfoSekolah.Nama}</h1>
                             </div>
                           </div>
                           <div className="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_module">
@@ -314,23 +285,12 @@ const EduIndex = () => {
                         <div className="et_pb_column et_pb_column_1_3 et_pb_column_7 et_pb_css_mix_blend_mode_passthrough">
                           <div className="et_pb_module et_pb_text et_pb_text_13 et_pb_text_align_left et_pb_bg_layout_light">
                             <div className="et_pb_text_inner">
-                              <h2>About MAN 1 Kota Bima</h2>
+                              <h2>About {settings.InfoSekolah.Nama}</h2>
                             </div>
                           </div>
                           <div className="et_pb_module et_pb_text et_pb_text_14 et_pb_text_align_left et_pb_bg_layout_light">
                             <div className="et_pb_text_inner">
-                              <p>
-                                MAN 1 Kota Bima adalah sebuah sekolah menengah
-                                atas yang berada di bawah naungan Kementerian
-                                Agama. MAN 1 Kota Bima memiliki status negeri
-                                dan menawarkan jenjang pendidikan Madrasah
-                                Aliyah (MA), serta memiliki fasilitas yang
-                                memadai, seperti ruang kelas, laboratorium,
-                                perpustakaan, masjid, dan lapangan olahraga. MAN
-                                1 Kota Bima memiliki visi untuk menjadi sekolah
-                                unggul yang berakhlak mulia, berwawasan global,
-                                dan berdaya saing tinggi.
-                              </p>
+                              <p>{settings.InfoSekolah.SekilasInfo}</p>
                             </div>
                           </div>
                           <div className="et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_module">
@@ -349,13 +309,9 @@ const EduIndex = () => {
                                 decoding="async"
                                 width="800"
                                 height="649"
-                                src="/assets-template/high-school_05.jpg"
+                                src={settings.About.image}
                                 alt=""
                                 title="high-school_05"
-                                srcSet="
-                              /assets-template/high-school_05.jpg         800w,
-                              /assets-template/high-school_05-480x389.jpg 480w
-                            "
                                 sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 800px, 100vw"
                                 className="wp-image-20"
                               />
@@ -368,23 +324,14 @@ const EduIndex = () => {
                                 style={{ paddingTop: "56.2963%" }}
                               >
                                 <iframe
-                                  title="Divi. The Ultimate WordPress Theme And Visual Page Builder"
-                                  src="index_1.html"
+                                  width="560"
+                                  height="315"
+                                  src={settings.About.video}
+                                  title="YouTube video player"
+                                  frameBorder="0"
                                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                   allowFullScreen={true}
-                                  name="fitvid0"
                                 ></iframe>
-                              </div>
-                            </div>
-                            <div
-                              style={{
-                                backgroundImage:
-                                  "url('/assets-template/high-school_06.jpg')",
-                              }}
-                              className="et_pb_video_overlay"
-                            >
-                              <div className="et_pb_video_overlay_hover">
-                                <a href="#" className="et_pb_video_play"></a>
                               </div>
                             </div>
                           </div>
@@ -448,88 +395,44 @@ const EduIndex = () => {
                         </div>
                       </div>
                       <div className="et_pb_row et_pb_row_4 et-last-child">
-                        <div className="et_pb_column et_pb_column_1_2 et_pb_column_11 et_pb_css_mix_blend_mode_passthrough">
-                          <div className="et_pb_module et_pb_image et_pb_image_7 et_pb_image_sticky">
-                            <span className="et_pb_image_wrap">
-                              <img
-                                decoding="async"
-                                width="800"
-                                height="541"
-                                src="/assets-template/high-school_08.jpg"
-                                alt=""
-                                title="high-school_08"
-                                srcSet="
-                              /assets-template/high-school_08.jpg         800w,
-                              /assets-template/high-school_08-480x325.jpg 480w
-                            "
-                                sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 800px, 100vw"
-                                className="wp-image-22"
-                              />
-                            </span>
-                          </div>
-                          <div className="et_pb_module et_pb_text et_pb_text_24 et_pb_text_align_left et_pb_bg_layout_light">
-                            <div className="et_pb_text_inner">
-                              <h4>Nature Field Trip</h4>
-                              <p>
-                                Vivamus magna justo, lacinia eget consectetur
-                                sed, convallis at tellus. Sed porttitor lectus
-                                nibh. Quisque velit nisi, pretium ut lacinia in,
-                                elementum id enim. Donec rutrum congue leo eget
-                                malesuada. Mauris blandit aliquet elit, eget
-                                tincidunt nibh pulvina
-                              </p>
+                        {settings.Events.map((event, index) => (
+                          <div
+                            style={{ marginBottom: 40 }}
+                            className={`et_pb_column et_pb_column_1_2 et_pb_column_11 et_pb_css_mix_blend_mode_passthrough ${
+                              (index + 1) % 2 === 0 ? "et-last-child" : ""
+                            }`}
+                            key={index}
+                          >
+                            <div className="et_pb_module et_pb_image et_pb_image_7 et_pb_image_sticky">
+                              <span className="et_pb_image_wrap">
+                                <img
+                                  decoding="async"
+                                  width="800"
+                                  height="541"
+                                  src={event.image}
+                                  alt=""
+                                  title="high-school_08"
+                                  sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 800px, 100vw"
+                                  className="wp-image-22"
+                                />
+                              </span>
+                            </div>
+                            <div className="et_pb_module et_pb_text et_pb_text_24 et_pb_text_align_left et_pb_bg_layout_light">
+                              <div className="et_pb_text_inner">
+                                <h4>{event.title}</h4>
+                                <p>{event.text}</p>
+                              </div>
+                            </div>
+                            <div className="et_pb_button_module_wrapper et_pb_button_2_wrapper et_pb_module">
+                              <a
+                                className="et_pb_button et_pb_button_2 et_pb_bg_layout_light"
+                                href={event.link}
+                              >
+                                View Details
+                              </a>
                             </div>
                           </div>
-                          <div className="et_pb_button_module_wrapper et_pb_button_2_wrapper et_pb_module">
-                            <a
-                              className="et_pb_button et_pb_button_2 et_pb_bg_layout_light"
-                              href=""
-                            >
-                              View Details
-                            </a>
-                          </div>
-                        </div>
-                        <div className="et_pb_column et_pb_column_1_2 et_pb_column_12 et_pb_css_mix_blend_mode_passthrough et-last-child">
-                          <div className="et_pb_module et_pb_image et_pb_image_8 et_pb_image_sticky">
-                            <span className="et_pb_image_wrap">
-                              <img
-                                decoding="async"
-                                width="800"
-                                height="541"
-                                src="/assets-template/high-school_09.jpg"
-                                alt=""
-                                title="high-school_09"
-                                srcSet="
-                              /assets-template/high-school_09.jpg         800w,
-                              /assets-template/high-school_09-480x325.jpg 480w
-                            "
-                                sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 800px, 100vw"
-                                className="wp-image-23"
-                              />
-                            </span>
-                          </div>
-                          <div className="et_pb_module et_pb_text et_pb_text_25 et_pb_text_align_left et_pb_bg_layout_light">
-                            <div className="et_pb_text_inner">
-                              <h4>Public Library Field Trip</h4>
-                              <p>
-                                Vivamus magna justo, lacinia eget consectetur
-                                sed, convallis at tellus. Sed porttitor lectus
-                                nibh. Quisque velit nisi, pretium ut lacinia in,
-                                elementum id enim. Donec rutrum congue leo eget
-                                malesuada. Mauris blandit aliquet elit, eget
-                                tincidunt nibh pulvina
-                              </p>
-                            </div>
-                          </div>
-                          <div className="et_pb_button_module_wrapper et_pb_button_3_wrapper et_pb_module">
-                            <a
-                              className="et_pb_button et_pb_button_3 et_pb_bg_layout_light"
-                              href=""
-                            >
-                              View Details
-                            </a>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                     <div className="et_pb_section et_pb_section_3 et_section_regular">
@@ -561,33 +464,40 @@ const EduIndex = () => {
                                   className="et_pb_salvattore_content"
                                   data-columns="3"
                                 >
-                                  <div className="column size-1of3">
-                                    <article
-                                      id="post-1"
-                                      className="et_pb_post clearfix et_pb_no_thumb et_pb_blog_item_0_0 post-1 post type-post status-publish format-standard hentry category-uncategorized"
+                                  {posts.map((post, index) => (
+                                    <div
+                                      className="column size-1of3"
+                                      key={index}
                                     >
-                                      <h5 className="entry-title">
-                                        <a href="https://man1.dev.app.web.id/2023/12/08/hello-world/">
-                                          Hello world!
-                                        </a>
-                                      </h5>
+                                      <article
+                                        id="post-1"
+                                        className="et_pb_post clearfix et_pb_no_thumb et_pb_blog_item_0_0 post-1 post type-post status-publish format-standard hentry category-uncategorized"
+                                      >
+                                        <h5 className="entry-title">
+                                          <Link
+                                            as={`/posts/${post.slug}`}
+                                            href={`/posts/${post.slug}.html`}
+                                            className="hover:underline"
+                                          >
+                                            {post.title}
+                                          </Link>
+                                        </h5>
 
-                                      <p className="post-meta">
-                                        <span className="published">
-                                          Dec 8, 2023
-                                        </span>
-                                      </p>
-                                      <div className="post-content">
-                                        <div className="post-content-inner">
-                                          <p>
-                                            Welcome to WordPress. This is your
-                                            first post. Edit or delete it, then
-                                            start writing!
-                                          </p>
+                                        <p className="post-meta">
+                                          <span className="published">
+                                            {new Date(
+                                              post.date
+                                            ).toLocaleString()}
+                                          </span>
+                                        </p>
+                                        <div className="post-content">
+                                          <div className="post-content-inner">
+                                            <p>{post.excerpt}</p>
+                                          </div>
                                         </div>
-                                      </div>
-                                    </article>
-                                  </div>
+                                      </article>
+                                    </div>
+                                  ))}
                                   <div className="column size-1of3"></div>
                                   <div className="column size-1of3"></div>
                                 </div>
@@ -602,99 +512,30 @@ const EduIndex = () => {
                         <div className="et_pb_column et_pb_column_1_2 et_pb_column_16 et_pb_css_mix_blend_mode_passthrough">
                           <div className="et_pb_module et_pb_text et_pb_text_27 et_pb_text_align_left et_pb_bg_layout_light">
                             <div className="et_pb_text_inner">
-                              <h2>Virtual Learning</h2>
+                              <h2>Visi dan Misi</h2>
                             </div>
                           </div>
                           <div className="et_pb_module et_pb_accordion et_pb_accordion_0">
                             <div className="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_0 et_pb_toggle_open">
                               <h4 className="et_pb_toggle_title">
-                                Curabitur aliquet quam id dui posuere blandit
+                                Visi {settings.InfoSekolah.Nama}
                               </h4>
                               <div className="et_pb_toggle_content clearfix">
-                                <p>
-                                  Vestibulum ante ipsum primis in faucibus orci
-                                  luctus et ultrices posuere cubilia Curae;
-                                  Donec velit neque, auctor sit amet aliquam
-                                  vel, ullamcorper sit amet ligula. Sed
-                                  porttitor lectus nibh. Nulla quis lorem ut
-                                  libero malesuada feugiat. Curabitur aliquet
-                                </p>
+                                <p>{settings.VisiMisi.Visi}</p>
                               </div>
                             </div>
-                            <div className="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_1 et_pb_toggle_close">
+                            <div className="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_0 et_pb_toggle_open">
                               <h4 className="et_pb_toggle_title">
-                                Cras ultricies ligula sed magna dictum porta.
+                                Misi {settings.InfoSekolah.Nama}
                               </h4>
                               <div className="et_pb_toggle_content clearfix">
-                                <p>
-                                  Vestibulum ante ipsum primis in faucibus orci
-                                  luctus et ultrices posuere cubilia Curae;
-                                  Donec velit neque
-                                </p>
+                                <ul>
+                                  {settings.VisiMisi.Misi.map((misi, index) => (
+                                    <li key={index}>{misi}</li>
+                                  ))}
+                                </ul>
                               </div>
                             </div>
-                            <div className="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_2 et_pb_toggle_close">
-                              <h4 className="et_pb_toggle_title">
-                                Sed porttitor lectus nibh
-                              </h4>
-                              <div className="et_pb_toggle_content clearfix">
-                                <p>
-                                  Vestibulum ante ipsum primis in faucibus orci
-                                  luctus et ultrices posuere cubilia Curae;
-                                  Donec velit neque
-                                </p>
-                              </div>
-                            </div>
-                            <div className="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_3 et_pb_toggle_close">
-                              <h4 className="et_pb_toggle_title">
-                                Aliquam vel, ullamcorper sit amet ligula
-                              </h4>
-                              <div className="et_pb_toggle_content clearfix">
-                                <p>
-                                  Vestibulum ante ipsum primis in faucibus orci
-                                  luctus et ultrices posuere cubilia Curae;
-                                  Donec velit neque
-                                </p>
-                              </div>
-                            </div>
-                            <div className="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_4 et_pb_toggle_close">
-                              <h4 className="et_pb_toggle_title">
-                                Primis in faucibus orci luctus et ultrices
-                              </h4>
-                              <div className="et_pb_toggle_content clearfix">
-                                <p>
-                                  Vestibulum ante ipsum primis in faucibus orci
-                                  luctus et ultrices posuere cubilia Curae;
-                                  Donec velit neque
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="et_pb_button_module_wrapper et_pb_button_5_wrapper et_pb_button_alignment_right et_pb_module">
-                            <a
-                              className="et_pb_button et_pb_button_5 et_pb_bg_layout_light"
-                              href=""
-                            >
-                              Learn More
-                            </a>
-                          </div>
-                          <div className="et_pb_module et_pb_image et_pb_image_9">
-                            <span className="et_pb_image_wrap">
-                              <img
-                                decoding="async"
-                                width="800"
-                                height="541"
-                                src="/assets-template/high-school_13.jpg"
-                                alt=""
-                                title="high-school_13"
-                                srcSet="
-                              /assets-template/high-school_13.jpg         800w,
-                              /assets-template/high-school_13-480x325.jpg 480w
-                            "
-                                sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 800px, 100vw"
-                                className="wp-image-25"
-                              />
-                            </span>
                           </div>
                         </div>
                         <div className="et_pb_column et_pb_column_1_2 et_pb_column_17 et_pb_css_mix_blend_mode_passthrough et-last-child">
@@ -704,14 +545,9 @@ const EduIndex = () => {
                                 decoding="async"
                                 width="1280"
                                 height="1563"
-                                src="/assets-template/high-school_11.jpg"
+                                src={settings.VisiMisi.image}
                                 alt=""
                                 title="high-school_11"
-                                srcSet="
-                              /assets-template/high-school_11.jpg          1280w,
-                              /assets-template/high-school_11-980x1197.jpg  980w,
-                              /assets-template/high-school_11-480x586.jpg   480w
-                            "
                                 sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw"
                                 className="wp-image-26"
                               />
