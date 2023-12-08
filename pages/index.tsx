@@ -1,6 +1,8 @@
 import { getAllPosts } from "../lib/api";
 import Post from "../interfaces/post";
 import EduIndex from "../components/edu";
+import Head from "next/head";
+import { settings } from "../settings";
 
 type Props = {
   allPosts: Post[];
@@ -28,7 +30,9 @@ export default function Index({ allPosts }: Props) {
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout> */}
-
+      <Head>
+        <title>Official Website {settings.InfoSekolah.Nama}</title>
+      </Head>
       <EduIndex posts={allPosts} />
     </>
   );

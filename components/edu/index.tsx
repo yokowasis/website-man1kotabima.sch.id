@@ -12,43 +12,13 @@ const EduIndex = ({ posts }: Props) => {
     <>
       <Head>
         <meta charSet="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="pingback" href="https://man1.dev.app.web.id/xmlrpc.php" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
-        <title>Home | Web {settings.InfoSekolah.Nama}</title>
         <meta name="robots" content="max-image-preview:large" />
 
-        <link rel="stylesheet" href="/index.css" type="text/css" media="all" />
-        <link
-          rel="stylesheet"
-          id="et-divi-open-sans-css"
-          href="/assets-template/css.css"
-          type="text/css"
-          media="all"
-        />
-        <link
-          rel="stylesheet"
-          id="divi-dynamic-css"
-          href="/assets-template/et-divi-dynamic-9.css"
-          as="style"
-          media="all"
-        />
-        <link
-          rel="stylesheet"
-          id="et-builder-googlefonts-cached-css"
-          href="/assets-template/css-1.css"
-          type="text/css"
-          media="all"
-        />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-        />
-        <link
-          rel="stylesheet"
-          as="style"
-          id="et-core-unified-deferred-9-cached-inline-styles"
-          href="/assets-template/et-core-unified-deferred-9.min.css"
         />
       </Head>
       <div className="page-template page-template-page-template-blank page-template-page-template-blank-php page page-id-9 et_pb_button_helper_class et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db chrome">
@@ -64,7 +34,7 @@ const EduIndex = ({ posts }: Props) => {
                     <div
                       className="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular"
                       style={{
-                        backgroundImage: `linear-gradient(90deg, #8300e9 0%, rgba(0, 0, 0, 0) 100%),url('${settings.HomeBackground}') !important`,
+                        backgroundImage: `linear-gradient(90deg, #8300e9 0%, rgba(0, 0, 0, 0) 100%),url('${settings.HomeBackground}')`,
                       }}
                     >
                       <div className="et_pb_row et_pb_row_0">
