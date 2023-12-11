@@ -32,6 +32,27 @@ export default function Document() {
           id="et-core-unified-deferred-9-cached-inline-styles"
           href="/assets-template/et-core-unified-deferred-9.min.css"
         />
+        <link
+          rel="stylesheet"
+          id="mediaelement-css"
+          href="/assets-template/mediaelementplayer-legacy.min.css"
+          type="text/css"
+          media="all"
+        />
+        <link
+          rel="stylesheet"
+          id="wp-mediaelement-css"
+          href="/assets-template/wp-mediaelement.min.css"
+          type="text/css"
+          media="all"
+        />
+        <link
+          rel="stylesheet"
+          id="wp-block-library-css"
+          href="/assets-template/style.min.css"
+          type="text/css"
+          media="all"
+        />
       </Head>
       <body>
         <Main />
