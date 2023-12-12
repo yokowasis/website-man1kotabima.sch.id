@@ -1,5 +1,6 @@
 export const settings = {
   InfoSekolah: {
+    Title: "",
     Nama: "MAN 1 Kota Bima",
     SekilasInfo: `MAN 1 Kota Bima adalah sebuah sekolah menengah atas yang berada di bawah naungan Kementerian Agama. MAN 1 Kota Bima memiliki status negeri dan menawarkan jenjang pendidikan Madrasah Aliyah (MA), serta memiliki fasilitas yang memadai, seperti ruang kelas, laboratorium, perpustakaan, masjid, dan lapangan olahraga. MAN 1 Kota Bima memiliki visi untuk menjadi sekolah unggul yang berakhlak mulia, berwawasan global, dan berdaya saing tinggi.`,
     Telepon: "(0374) 42434",
