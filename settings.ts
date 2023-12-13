@@ -2,6 +2,10 @@ export const settings = {
   InfoSekolah: {
     Title: "",
     Logo: "https://1.bp.blogspot.com/-Jl-IvuKLjWc/YGyaWiAkHFI/AAAAAAAACVo/brBouKlkxAE9m52u54EMTPayvnzZEeR4gCNcBGAsYHQ/s2048/Kementerian%2BAgama.png",
+    Gambar:
+      "https://1.bp.blogspot.com/-nbXsTP3itbw/YKHYwZ_dAiI/AAAAAAAAA_g/iMZS7qC9mLkCdJ2DxTu3QvdOJnT7TSm9ACLcBGAsYHQ/s960/man1-2.png",
+    Gambar2:
+      "https://scontent.fdps5-1.fna.fbcdn.net/v/t1.6435-9/31636174_149753559206048_7987604276715192320_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=2be8e3&_nc_eui2=AeHXd0PxXZq5rEwaUXpr8wQ4r1BgOffBnOmvUGA598Gc6ehK__JLM6XyWk6ZK2r7oPJwDAywJUIsCJks6LnE2yw4&_nc_ohc=U6y56kjUwi0AX817462&_nc_ht=scontent.fdps5-1.fna&oh=00_AfAhi71ogZmNeQYP3Jl-e2Z4Cpwsv8pyUjeusO6KdRDmFA&oe=65A0F820",
     Nama: "MAN 1 Kota Bima",
     SekilasInfo: `MAN 1 Kota Bima adalah sebuah sekolah menengah atas yang berada di bawah naungan Kementerian Agama. MAN 1 Kota Bima memiliki status negeri dan menawarkan jenjang pendidikan Madrasah Aliyah (MA), serta memiliki fasilitas yang memadai, seperti ruang kelas, laboratorium, perpustakaan, masjid, dan lapangan olahraga. MAN 1 Kota Bima memiliki visi untuk menjadi sekolah unggul yang berakhlak mulia, berwawasan global, dan berdaya saing tinggi.`,
     Telepon: "(0374) 42434",

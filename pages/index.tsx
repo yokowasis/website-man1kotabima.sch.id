@@ -60,13 +60,13 @@ export default function Index({ allPosts, s }: Props) {
               >
                 <img
                   className="position-absolute w-100 h-100"
-                  src="./assets-driving/about-1.jpg"
+                  src={s.InfoSekolah.Gambar}
                   alt=""
                   style={{ objectFit: "cover" }}
                 />
                 <img
                   className="position-absolute top-0 start-0 bg-white pe-3 pb-3"
-                  src="./assets-driving/about-2.jpg"
+                  src={s.InfoSekolah.Gambar2}
                   alt=""
                   style={{ width: "200px", height: "200px" }}
                 />
@@ -84,7 +84,7 @@ export default function Index({ allPosts, s }: Props) {
               <div className="h-100">
                 <h6 className="text-primary text-uppercase mb-2">About Us</h6>
                 <h1 className="display-6 mb-4">
-                  Selamat Datang di MAN 1 KOTA BIMA
+                  Selamat Datang di {s.InfoSekolah.Nama}
                 </h1>
                 <div
                   className="mb-4"
@@ -110,143 +110,38 @@ export default function Index({ allPosts, s }: Props) {
               animationName: "none",
             }}
           >
-            <h6 className="text-primary text-uppercase mb-2">
-              Tranding Courses
-            </h6>
-            <h1 className="display-6 mb-4">
-              Our Courses Upskill You With Driving Training
-            </h1>
+            <h6 className="text-primary text-uppercase mb-2">EVENTS</h6>
+            <h1 className="display-6 mb-4">Curent Events on Our School</h1>
           </div>
           <div className="row g-4 justify-content-center">
-            <div
-              className="col-lg-4 col-md-6 wow fadeInUp"
-              data-wow-delay="0.1s"
-              style={{
-                visibility: "hidden",
-                animationDelay: "0.1s",
-                animationName: "none",
-              }}
-            >
-              <div className="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                <div className="text-center p-4 pt-0">
-                  <div className="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">
-                    $99
+            {allPosts.map((post, i) => (
+              <div key={i} className="col-lg-4 col-md-6 wow fadeInUp">
+                <div className="courses-item d-flex flex-column bg-white overflow-hidden h-100">
+                  <div className="text-center p-4 pt-0">
+                    <h5 className="mb-3 mt-4">
+                      <a className="text-dark" href={`/posts/${post.slug}`}>
+                        {post.title}
+                      </a>
+                    </h5>
+                    <p>{post.excerpt}</p>
+                    <ol className="breadcrumb justify-content-center mb-0">
+                      <li className="breadcrumb-item small">
+                        <i className="fa fa-calendar-alt text-primary me-2"></i>
+                        {post.date}
+                      </li>
+                    </ol>
                   </div>
-                  <h5 className="mb-3">Automatic Car Lessons</h5>
-                  <p>
-                    Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                    amet diam et eos
-                  </p>
-                  <ol className="breadcrumb justify-content-center mb-0">
-                    <li className="breadcrumb-item small">
-                      <i className="fa fa-signal text-primary me-2"></i>Beginner
-                    </li>
-                    <li className="breadcrumb-item small">
-                      <i className="fa fa-calendar-alt text-primary me-2"></i>3
-                      Week
-                    </li>
-                  </ol>
-                </div>
-                <div className="position-relative mt-auto">
-                  <img
-                    className="img-fluid"
-                    src="./assets-driving/courses-1.jpg"
-                    alt=""
-                  />
-                  <div className="courses-overlay">
-                    <a className="btn btn-outline-primary border-2" href="">
-                      Read More
-                    </a>
+                  <div className="position-relative mt-auto">
+                    <img className="img-fluid" src={post.coverImage} alt="" />
+                    <div className="courses-overlay">
+                      <a className="btn btn-outline-primary border-2" href="">
+                        Read More
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              className="col-lg-4 col-md-6 wow fadeInUp"
-              data-wow-delay="0.3s"
-              style={{
-                visibility: "hidden",
-                animationDelay: "0.3s",
-                animationName: "none",
-              }}
-            >
-              <div className="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                <div className="text-center p-4 pt-0">
-                  <div className="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">
-                    $99
-                  </div>
-                  <h5 className="mb-3">Highway Driving Lesson</h5>
-                  <p>
-                    Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                    amet diam et eos
-                  </p>
-                  <ol className="breadcrumb justify-content-center mb-0">
-                    <li className="breadcrumb-item small">
-                      <i className="fa fa-signal text-primary me-2"></i>Beginner
-                    </li>
-                    <li className="breadcrumb-item small">
-                      <i className="fa fa-calendar-alt text-primary me-2"></i>3
-                      Week
-                    </li>
-                  </ol>
-                </div>
-                <div className="position-relative mt-auto">
-                  <img
-                    className="img-fluid"
-                    src="./assets-driving/courses-2.jpg"
-                    alt=""
-                  />
-                  <div className="courses-overlay">
-                    <a className="btn btn-outline-primary border-2" href="">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-4 col-md-6 wow fadeInUp"
-              data-wow-delay="0.5s"
-              style={{
-                visibility: "hidden",
-                animationDelay: "0.5s",
-                animationName: "none",
-              }}
-            >
-              <div className="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                <div className="text-center p-4 pt-0">
-                  <div className="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">
-                    $99
-                  </div>
-                  <h5 className="mb-3">International Driving</h5>
-                  <p>
-                    Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                    amet diam et eos
-                  </p>
-                  <ol className="breadcrumb justify-content-center mb-0">
-                    <li className="breadcrumb-item small">
-                      <i className="fa fa-signal text-primary me-2"></i>Beginner
-                    </li>
-                    <li className="breadcrumb-item small">
-                      <i className="fa fa-calendar-alt text-primary me-2"></i>3
-                      Week
-                    </li>
-                  </ol>
-                </div>
-                <div className="position-relative mt-auto">
-                  <img
-                    className="img-fluid"
-                    src="./assets-driving/courses-3.jpg"
-                    alt=""
-                  />
-                  <div className="courses-overlay">
-                    <a className="btn btn-outline-primary border-2" href="">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
