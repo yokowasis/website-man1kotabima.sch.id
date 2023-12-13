@@ -1,6 +1,5 @@
 import { getAllPosts } from "../lib/api";
 import Post from "../interfaces/post";
-import EduIndex from "../components/edu";
 import Head from "next/head";
 import { Settings, settings } from "../settings";
 import Header from "./header";

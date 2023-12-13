@@ -1,4 +1,4 @@
-import { Settings } from "../settings";
+import { Settings, settings } from "../settings";
 
 const Footer = (props: { s: Settings }) => {
   return (
@@ -122,6 +122,12 @@ const Footer = (props: { s: Settings }) => {
       </a>
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  return {
+    props: { s: settings },
+  };
 };
 
 export default Footer;
