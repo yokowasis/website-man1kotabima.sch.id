@@ -14,6 +14,49 @@ export const settings = {
     Youtube: "",
   },
 
+  Slider: [
+    {
+      image:
+        "https://images.pexels.com/photos/159497/school-notebook-binders-notepad-159497.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      text: "Membangun Jiwa, Mengasah Potensi",
+    },
+    {
+      image:
+        "https://images.pexels.com/photos/1370296/pexels-photo-1370296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      text: "Kreativitas, Integritas, Prestasi.",
+    },
+    {
+      image:
+        "https://images.pexels.com/photos/207756/pexels-photo-207756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      text: "Kunci Masa Depan: Pendidikan Berkualitas.",
+    },
+  ],
+
+  Keunggulan: [
+    {
+      judul: "Akademik Berkualitas",
+      deskripsi: "Menyediakan kurikulum yang komprehensif dan terkini",
+    },
+    {
+      judul: "Fasilitas Modern",
+      deskripsi:
+        "Fasilitas modern dan lingkungan yang mendukung proses belajar-mengajar",
+    },
+    {
+      judul: "Ekstrakurikuler Variatif",
+      deskripsi:
+        "Menawarkan beragam kegiatan ekstrakurikuler yang memperkaya pengalaman siswa",
+    },
+  ],
+
+  Sambutan: `
+    Selamat datang di MAN 1 Kota Bima,
+
+    Di MAN 1 Kota Bima, kami berkomitmen untuk menciptakan lingkungan belajar yang inspiratif dan inklusif. Kami percaya bahwa pendidikan bukan hanya tentang mengajar mata pelajaran, tetapi juga tentang membentuk karakter, menggali potensi, dan menumbuhkan kreativitas. Di sini, kami menawarkan pengalaman pendidikan yang komprehensif dengan fasilitas modern dan kurikulum yang relevan untuk mempersiapkan setiap siswa menjadi individu yang siap menghadapi tantangan masa depan.
+
+    Kami mengundang Anda untuk menjelajahi lebih dalam tentang MAN 1 Kota Bima melalui situs web kami. Bersama-sama, kami berkomitmen untuk membentuk generasi yang berintegritas, berdaya saing, dan berkontribusi positif bagi masyarakat. Terima kasih atas kepercayaan Anda dalam memilih pendidikan di MAN 1 Kota Bima.  
+  `,
+
   Menu: {
     Home: "/",
     About: "/pages/about",

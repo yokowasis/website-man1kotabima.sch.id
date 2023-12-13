@@ -5,6 +5,7 @@ import Head from "next/head";
 import { Settings, settings } from "../settings";
 import Header from "./header";
 import Footer from "./footer";
+import Slider from "./slider";
 
 type Props = {
   allPosts: Post[];
@@ -39,181 +40,7 @@ export default function Index({ allPosts, s }: Props) {
 
       <Header s={s} />
 
-      <div
-        className="container-fluid p-0 wow fadeIn"
-        data-wow-delay="0.1s"
-        style={{
-          visibility: "visible",
-          animationDelay: "0.1s",
-          animationName: "fadeIn",
-        }}
-      >
-        <div
-          id="header-carousel"
-          className="carousel slide pointer-event"
-          data-bs-ride="carousel"
-        >
-          <div className="carousel-inner">
-            <div className="carousel-item">
-              <img
-                className="w-100"
-                src="./assets-driving/carousel-1.jpg"
-                alt="Image"
-              />
-              <div className="carousel-caption">
-                <div className="container">
-                  <div className="row justify-content-center">
-                    <div className="col-lg-7">
-                      <h1 className="display-2 text-light mb-5 animated slideInDown">
-                        Learn To Drive With Confidence
-                      </h1>
-                      <a href="" className="btn btn-primary py-sm-3 px-sm-5">
-                        Learn More
-                      </a>
-                      <a href="" className="btn btn-light py-sm-3 px-sm-5 ms-3">
-                        Our Courses
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item active">
-              <img
-                className="w-100"
-                src="./assets-driving/carousel-2.jpg"
-                alt="Image"
-              />
-              <div className="carousel-caption">
-                <div className="container">
-                  <div className="row justify-content-center">
-                    <div className="col-lg-7">
-                      <h1 className="display-2 text-light mb-5 slideInDown">
-                        Safe Driving Is Our Top Priority
-                      </h1>
-                      <a href="" className="btn btn-primary py-sm-3 px-sm-5">
-                        Learn More
-                      </a>
-                      <a href="" className="btn btn-light py-sm-3 px-sm-5 ms-3">
-                        Our Courses
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#header-carousel"
-            data-bs-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#header-carousel"
-            data-bs-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-
-      <div className="container-fluid facts py-5 pt-lg-0">
-        <div className="container py-5 pt-lg-0">
-          <div className="row gx-0">
-            <div
-              className="col-lg-4 wow fadeIn"
-              data-wow-delay="0.1s"
-              style={{
-                visibility: "visible",
-                animationDelay: "0.1s",
-                animationName: "fadeIn",
-              }}
-            >
-              <div
-                className="bg-white shadow d-flex align-items-center h-100 p-4"
-                style={{ minHeight: 150 }}
-              >
-                <div className="d-flex">
-                  <div className="flex-shrink-0 btn-lg-square bg-primary">
-                    <i className="fa fa-car text-white"></i>
-                  </div>
-                  <div className="ps-4">
-                    <h5>Easy Driving Learn</h5>
-                    <span>
-                      Clita erat ipsum lorem sit sed stet duo justo erat amet
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-4 wow fadeIn"
-              data-wow-delay="0.3s"
-              style={{
-                visibility: "visible",
-                animationDelay: "0.3s",
-                animationName: "fadeIn",
-              }}
-            >
-              <div
-                className="bg-white shadow d-flex align-items-center h-100 p-4"
-                style={{ minHeight: "150px" }}
-              >
-                <div className="d-flex">
-                  <div className="flex-shrink-0 btn-lg-square bg-primary">
-                    <i className="fa fa-users text-white"></i>
-                  </div>
-                  <div className="ps-4">
-                    <h5>National Instructor</h5>
-                    <span>
-                      Clita erat ipsum lorem sit sed stet duo justo erat amet
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-4 wow fadeIn"
-              data-wow-delay="0.5s"
-              style={{
-                visibility: "visible",
-                animationDelay: "0.5s",
-                animationName: "fadeIn",
-              }}
-            >
-              <div
-                className="bg-white shadow d-flex align-items-center h-100 p-4"
-                style={{ minHeight: "150px" }}
-              >
-                <div className="d-flex">
-                  <div className="flex-shrink-0 btn-lg-square bg-primary">
-                    <i className="fa fa-file-alt text-white"></i>
-                  </div>
-                  <div className="ps-4">
-                    <h5>Get licence</h5>
-                    <span>
-                      Clita erat ipsum lorem sit sed stet duo justo erat amet
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Slider s={s} />
 
       <div className="container-xxl py-6">
         <div className="container">
@@ -257,55 +84,14 @@ export default function Index({ allPosts, s }: Props) {
               <div className="h-100">
                 <h6 className="text-primary text-uppercase mb-2">About Us</h6>
                 <h1 className="display-6 mb-4">
-                  We Help Students To Pass Test &amp; Get A License On The First
-                  Try
+                  Selamat Datang di MAN 1 KOTA BIMA
                 </h1>
-                <p>
-                  Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                  Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                  sed stet lorem sit clita duo justo magna dolore erat amet
-                </p>
-                <p className="mb-4">
-                  Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                  Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                  sed stet lorem sit clita duo justo magna dolore erat amet
-                </p>
-                <div className="row g-2 mb-4 pb-2">
-                  <div className="col-sm-6">
-                    <i className="fa fa-check text-primary me-2"></i>Fully
-                    Licensed
-                  </div>
-                  <div className="col-sm-6">
-                    <i className="fa fa-check text-primary me-2"></i>Online
-                    Tracking
-                  </div>
-                  <div className="col-sm-6">
-                    <i className="fa fa-check text-primary me-2"></i>Afordable
-                    Fee
-                  </div>
-                  <div className="col-sm-6">
-                    <i className="fa fa-check text-primary me-2"></i>Best
-                    Trainers
-                  </div>
-                </div>
-                <div className="row g-4">
-                  <div className="col-sm-6">
-                    <a className="btn btn-primary py-3 px-5" href="">
-                      Read More
-                    </a>
-                  </div>
-                  <div className="col-sm-6">
-                    <a
-                      className="d-inline-flex align-items-center btn btn-outline-primary border-2 p-2"
-                      href="tel:+0123456789"
-                    >
-                      <span className="flex-shrink-0 btn-square bg-primary">
-                        <i className="fa fa-phone-alt text-white"></i>
-                      </span>
-                      <span className="px-3">+012 345 6789</span>
-                    </a>
-                  </div>
-                </div>
+                <div
+                  className="mb-4"
+                  dangerouslySetInnerHTML={{
+                    __html: s.Sambutan.replace(/\n/g, "<br />"),
+                  }}
+                ></div>
               </div>
             </div>
           </div>
@@ -459,83 +245,6 @@ export default function Index({ allPosts, s }: Props) {
                     </a>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-8 my-6 mb-0 wow fadeInUp"
-              data-wow-delay="0.1s"
-              style={{
-                visibility: "hidden",
-                animationDelay: "0.1s",
-                animationName: "none",
-              }}
-            >
-              <div className="bg-primary text-center p-5">
-                <h1 className="mb-4">Make Appointment</h1>
-                <form>
-                  <div className="row g-3">
-                    <div className="col-sm-6">
-                      <div className="form-floating">
-                        <input
-                          type="text"
-                          className="form-control border-0"
-                          id="gname"
-                          placeholder="Gurdian Name"
-                        />
-                        <label htmlFor="gname">Your Name</label>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="form-floating">
-                        <input
-                          type="email"
-                          className="form-control border-0"
-                          id="gmail"
-                          placeholder="Gurdian Email"
-                        />
-                        <label htmlFor="gmail">Your Email</label>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="form-floating">
-                        <input
-                          type="text"
-                          className="form-control border-0"
-                          id="cname"
-                          placeholder="Child Name"
-                        />
-                        <label htmlFor="cname">Courses Type</label>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="form-floating">
-                        <input
-                          type="text"
-                          className="form-control border-0"
-                          id="cage"
-                          placeholder="Child Age"
-                        />
-                        <label htmlFor="cage">Car Type</label>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="form-floating">
-                        <textarea
-                          className="form-control border-0"
-                          placeholder="Leave a message here"
-                          id="message"
-                          style={{ height: 100 }}
-                        ></textarea>
-                        <label htmlFor="message">Message</label>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <button className="btn btn-dark w-100 py-3" type="submit">
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
