@@ -3,6 +3,8 @@ import Post from "../interfaces/post";
 import EduIndex from "../components/edu";
 import Head from "next/head";
 import { Settings, settings } from "../settings";
+import Header from "./header";
+import Footer from "./footer";
 
 type Props = {
   allPosts: Post[];
@@ -35,150 +37,7 @@ export default function Index({ allPosts, s }: Props) {
         <title>{s.InfoSekolah.Title}</title>
       </Head>
 
-      <div
-        id="spinner"
-        className="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-      >
-        <div className="spinner-grow text-primary" role="status"></div>
-      </div>
-
-      <div className="container-fluid bg-dark text-light p-0">
-        <div className="row gx-0 d-none d-lg-flex">
-          <div className="col-lg-7 px-5 text-start">
-            <div className="h-100 d-inline-flex align-items-center me-4">
-              <small className="fa fa-map-marker-alt text-primary me-2"></small>
-              <small>123 Street, New York, USA</small>
-            </div>
-            <div className="h-100 d-inline-flex align-items-center">
-              <small className="far fa-clock text-primary me-2"></small>
-              <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
-            </div>
-          </div>
-          <div className="col-lg-5 px-5 text-end">
-            <div className="h-100 d-inline-flex align-items-center me-4">
-              <small className="fa fa-phone-alt text-primary me-2"></small>
-              <small>+012 345 6789</small>
-            </div>
-            <div className="h-100 d-inline-flex align-items-center mx-n2">
-              <a
-                className="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
-                href=""
-              >
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a
-                className="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
-                href=""
-              >
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                className="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
-                href=""
-              >
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a className="btn btn-square btn-link rounded-0" href="">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <nav
-        className="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0"
-        style={{ top: "-100px" }}
-      >
-        <a
-          href="https://demo.htmlcodex.com/2478/driving-school-website-template/index.html"
-          className="navbar-brand d-flex align-items-center border-end px-4 px-lg-5"
-        >
-          <h2 className="m-0">
-            <i className="fa fa-car text-primary me-2"></i>Drivin
-          </h2>
-        </a>
-        <button
-          type="button"
-          className="navbar-toggler me-4"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <div className="navbar-nav ms-auto p-4 p-lg-0">
-            <a
-              href="https://demo.htmlcodex.com/2478/driving-school-website-template/index.html"
-              className="nav-item nav-link active"
-            >
-              Home
-            </a>
-            <a
-              href="https://demo.htmlcodex.com/2478/driving-school-website-template/about.html"
-              className="nav-item nav-link"
-            >
-              About
-            </a>
-            <a
-              href="https://demo.htmlcodex.com/2478/driving-school-website-template/courses.html"
-              className="nav-item nav-link"
-            >
-              Courses
-            </a>
-            <div className="nav-item dropdown">
-              <a
-                href="#"
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Pages
-              </a>
-              <div className="dropdown-menu bg-light m-0">
-                <a
-                  href="https://demo.htmlcodex.com/2478/driving-school-website-template/feature.html"
-                  className="dropdown-item"
-                >
-                  Features
-                </a>
-                <a
-                  href="https://demo.htmlcodex.com/2478/driving-school-website-template/appointment.html"
-                  className="dropdown-item"
-                >
-                  Appointment
-                </a>
-                <a
-                  href="https://demo.htmlcodex.com/2478/driving-school-website-template/team.html"
-                  className="dropdown-item"
-                >
-                  Our Team
-                </a>
-                <a
-                  href="https://demo.htmlcodex.com/2478/driving-school-website-template/testimonial.html"
-                  className="dropdown-item"
-                >
-                  Testimonial
-                </a>
-                <a
-                  href="https://demo.htmlcodex.com/2478/driving-school-website-template/404.html"
-                  className="dropdown-item"
-                >
-                  404 Page
-                </a>
-              </div>
-            </div>
-            <a
-              href="https://demo.htmlcodex.com/2478/driving-school-website-template/contact.html"
-              className="nav-item nav-link"
-            >
-              Contact
-            </a>
-          </div>
-          <a href="" className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
-            Get Started<i className="fa fa-arrow-right ms-3"></i>
-          </a>
-        </div>
-      </nav>
+      <Header s={s} />
 
       <div
         className="container-fluid p-0 wow fadeIn"
@@ -376,13 +235,13 @@ export default function Index({ allPosts, s }: Props) {
                   className="position-absolute w-100 h-100"
                   src="./assets-driving/about-1.jpg"
                   alt=""
-                  style={{objectFit: "cover"}}
+                  style={{ objectFit: "cover" }}
                 />
                 <img
                   className="position-absolute top-0 start-0 bg-white pe-3 pb-3"
                   src="./assets-driving/about-2.jpg"
                   alt=""
-                  style={{width: "200px", height: "200px"}}
+                  style={{ width: "200px", height: "200px" }}
                 />
               </div>
             </div>
@@ -394,7 +253,6 @@ export default function Index({ allPosts, s }: Props) {
                 animationDelay: "0.5s",
                 animationName: "fadeInUp",
               }}
-            
             >
               <div className="h-100">
                 <h6 className="text-primary text-uppercase mb-2">About Us</h6>
@@ -464,7 +322,7 @@ export default function Index({ allPosts, s }: Props) {
               visibility: "hidden",
               animationDelay: "0.1s",
               animationName: "none",
-            }}          
+            }}
           >
             <h6 className="text-primary text-uppercase mb-2">
               Tranding Courses
@@ -568,7 +426,6 @@ export default function Index({ allPosts, s }: Props) {
                 animationDelay: "0.5s",
                 animationName: "none",
               }}
-            "
             >
               <div className="courses-item d-flex flex-column bg-white overflow-hidden h-100">
                 <div className="text-center p-4 pt-0">
@@ -605,13 +462,13 @@ export default function Index({ allPosts, s }: Props) {
               </div>
             </div>
             <div
-            className="col-lg-8 my-6 mb-0 wow fadeInUp"
-            data-wow-delay="0.1s"
-            style={{
-              visibility: "hidden",
-              animationDelay: "0.1s",
-              animationName: "none",
-            }}
+              className="col-lg-8 my-6 mb-0 wow fadeInUp"
+              data-wow-delay="0.1s"
+              style={{
+                visibility: "hidden",
+                animationDelay: "0.1s",
+                animationName: "none",
+              }}
             >
               <div className="bg-primary text-center p-5">
                 <h1 className="mb-4">Make Appointment</h1>
@@ -624,9 +481,8 @@ export default function Index({ allPosts, s }: Props) {
                           className="form-control border-0"
                           id="gname"
                           placeholder="Gurdian Name"
-                          value=""
                         />
-                        <label for="gname">Your Name</label>
+                        <label htmlFor="gname">Your Name</label>
                       </div>
                     </div>
                     <div className="col-sm-6">
@@ -636,9 +492,8 @@ export default function Index({ allPosts, s }: Props) {
                           className="form-control border-0"
                           id="gmail"
                           placeholder="Gurdian Email"
-                          value=""
                         />
-                        <label for="gmail">Your Email</label>
+                        <label htmlFor="gmail">Your Email</label>
                       </div>
                     </div>
                     <div className="col-sm-6">
@@ -648,9 +503,8 @@ export default function Index({ allPosts, s }: Props) {
                           className="form-control border-0"
                           id="cname"
                           placeholder="Child Name"
-                          value=""
                         />
-                        <label for="cname">Courses Type</label>
+                        <label htmlFor="cname">Courses Type</label>
                       </div>
                     </div>
                     <div className="col-sm-6">
@@ -660,7 +514,6 @@ export default function Index({ allPosts, s }: Props) {
                           className="form-control border-0"
                           id="cage"
                           placeholder="Child Age"
-                          value=""
                         />
                         <label htmlFor="cage">Car Type</label>
                       </div>
@@ -668,12 +521,12 @@ export default function Index({ allPosts, s }: Props) {
                     <div className="col-12">
                       <div className="form-floating">
                         <textarea
-                            className="form-control border-0"
-                            placeholder="Leave a message here"
-                            id="message"
-                            style={{ height: 100 }}
+                          className="form-control border-0"
+                          placeholder="Leave a message here"
+                          id="message"
+                          style={{ height: 100 }}
                         ></textarea>
-                        <label for="message">Message</label>
+                        <label htmlFor="message">Message</label>
                       </div>
                     </div>
                     <div className="col-12">
@@ -696,10 +549,10 @@ export default function Index({ allPosts, s }: Props) {
               className="col-lg-6 wow fadeInUp"
               data-wow-delay="0.1s"
               style={{
-              visibility: hidden;
-              animationDelay: 0.1s;
-              animationName: none;
-            "
+                visibility: "hidden",
+                animationDelay: "0.1s",
+                animationName: "none",
+              }}
             >
               <h6 className="text-primary text-uppercase mb-2">
                 Why Choose Us!
@@ -717,10 +570,10 @@ export default function Index({ allPosts, s }: Props) {
                   className="col-sm-6 wow fadeIn"
                   data-wow-delay="0.1s"
                   style={{
-                  visibility: hidden;
-                  animationDelay: 0.1s;
-                  animationName: none;
-                "
+                    visibility: "hidden",
+                    animationDelay: "0.1s",
+                    animationName: "none",
+                  }}
                 >
                   <div className="d-flex align-items-center mb-3">
                     <div className="flex-shrink-0 btn-square bg-primary me-3">
@@ -736,10 +589,10 @@ export default function Index({ allPosts, s }: Props) {
                   className="col-sm-6 wow fadeIn"
                   data-wow-delay="0.2s"
                   style={{
-                  visibility: hidden;
-                  animationDelay: 0.2s;
-                  animationName: none;
-                "
+                    visibility: "hidden",
+                    animationDelay: "0.2s",
+                    animationName: "none",
+                  }}
                 >
                   <div className="d-flex align-items-center mb-3">
                     <div className="flex-shrink-0 btn-square bg-primary me-3">
@@ -755,10 +608,10 @@ export default function Index({ allPosts, s }: Props) {
                   className="col-sm-6 wow fadeIn"
                   data-wow-delay="0.3s"
                   style={{
-                  visibility: hidden;
-                  animationDelay: 0.3s;
-                  animationName: none;
-                "
+                    visibility: "hidden",
+                    animationDelay: "0.3s",
+                    animationName: "none",
+                  }}
                 >
                   <div className="d-flex align-items-center mb-3">
                     <div className="flex-shrink-0 btn-square bg-primary me-3">
@@ -774,10 +627,10 @@ export default function Index({ allPosts, s }: Props) {
                   className="col-sm-6 wow fadeIn"
                   data-wow-delay="0.4s"
                   style={{
-                  visibility: hidden;
-                  animationDelay: 0.4s;
-                  animationName: none;
-                "
+                    visibility: "hidden",
+                    animationDelay: "0.4s",
+                    animationName: "none",
+                  }}
                 >
                   <div className="d-flex align-items-center mb-3">
                     <div className="flex-shrink-0 btn-square bg-primary me-3">
@@ -795,26 +648,26 @@ export default function Index({ allPosts, s }: Props) {
               className="col-lg-6 wow fadeInUp"
               data-wow-delay="0.5s"
               style={{
-              visibility: hidden;
-              animationDelay: "0.5s";
-              animationName: none;
-            "
+                visibility: "hidden",
+                animationDelay: "0.5s",
+                animationName: "none",
+              }}
             >
               <div
                 className="position-relative overflow-hidden pe-5 pt-5 h-100"
-                style={{minHeight: 400px"
+                style={{ minHeight: "400px" }}
               >
                 <img
                   className="position-absolute w-100 h-100"
                   src="./assets-driving/about-1.jpg"
                   alt=""
-                  style={{objectFit: cover"
+                  style={{ objectFit: "cover" }}
                 />
                 <img
                   className="position-absolute top-0 end-0 bg-white ps-3 pb-3"
                   src="./assets-driving/about-2.jpg"
                   alt=""
-                  style={{width: 200px; height: 200px"
+                  style={{ width: "200px", height: "200px" }}
                 />
               </div>
             </div>
@@ -828,11 +681,11 @@ export default function Index({ allPosts, s }: Props) {
             className="text-center mx-auto mb-5 wow fadeInUp"
             data-wow-delay="0.1s"
             style={{
-            maxWidth: 500px;
-            visibility: hidden;
-            animationDelay: 0.1s;
-            animationName: none;
-          "
+              maxWidth: "500px",
+              visibility: "hidden",
+              animationDelay: "0.1s",
+              animationName: "none",
+            }}
           >
             <h6 className="text-primary text-uppercase mb-2">Meet The Team</h6>
             <h1 className="display-6 mb-4">
@@ -844,10 +697,10 @@ export default function Index({ allPosts, s }: Props) {
               className="col-lg-3 col-md-6 wow fadeInUp"
               data-wow-delay="0.1s"
               style={{
-              visibility: hidden;
-              animationDelay: 0.1s;
-              animationName: none;
-            "
+                visibility: "hidden",
+                animationDelay: "0.1s",
+                animationName: "none",
+              }}
             >
               <div className="team-item position-relative">
                 <div className="position-relative">
@@ -887,10 +740,10 @@ export default function Index({ allPosts, s }: Props) {
               className="col-lg-3 col-md-6 wow fadeInUp"
               data-wow-delay="0.3s"
               style={{
-              visibility: hidden;
-              animationDelay: 0.3s;
-              animationName: none;
-            "
+                visibility: "hidden",
+                animationDelay: "0.3s",
+                animationName: "none",
+              }}
             >
               <div className="team-item position-relative">
                 <div className="position-relative">
@@ -930,10 +783,10 @@ export default function Index({ allPosts, s }: Props) {
               className="col-lg-3 col-md-6 wow fadeInUp"
               data-wow-delay="0.5s"
               style={{
-              visibility: hidden;
-              animationDelay: "0.5s";
-              animationName: none;
-            "
+                visibility: "hidden",
+                animationDelay: "0.5s",
+                animationName: "none",
+              }}
             >
               <div className="team-item position-relative">
                 <div className="position-relative">
@@ -973,10 +826,10 @@ export default function Index({ allPosts, s }: Props) {
               className="col-lg-3 col-md-6 wow fadeInUp"
               data-wow-delay="0.7s"
               style={{
-              visibility: hidden;
-              animationDelay: 0.7s;
-              animationName: none;
-            "
+                visibility: "hidden",
+                animationDelay: "0.7s",
+                animationName: "none",
+              }}
             >
               <div className="team-item position-relative">
                 <div className="position-relative">
@@ -1016,355 +869,7 @@ export default function Index({ allPosts, s }: Props) {
         </div>
       </div>
 
-      <div className="container-xxl py-6">
-        <div className="container">
-          <div
-            className="text-center mx-auto mb-5 wow fadeInUp"
-            data-wow-delay="0.1s"
-            style={{
-            maxWidth: 500px;
-            visibility: hidden;
-            animationDelay: 0.1s;
-            animationName: none;
-          "
-          >
-            <h6 className="text-primary text-uppercase mb-2">Testimonial</h6>
-            <h1 className="display-6 mb-4">What Our Clients Say!</h1>
-          </div>
-          <div className="row justify-content-center">
-            <div
-              className="col-lg-8 wow fadeInUp"
-              data-wow-delay="0.1s"
-              style={{
-              visibility: hidden;
-              animationDelay: 0.1s;
-              animationName: none;
-            "
-            >
-              <div className="owl-carousel testimonial-carousel owl-loaded owl-drag">
-                <div className="owl-stage-outer">
-                  <div
-                    className="owl-stage"
-                    style={{
-                    transform: translate3d(-1680px, 0px, 0px);
-                    transition: all 1s ease 0s;
-                    width: 5880px;
-                  "
-                  >
-                    <div className="owl-item cloned" style={{width: 840px">
-                      <div className="testimonial-item text-center">
-                        <div className="position-relative mb-5">
-                          <img
-                            className="img-fluid rounded-circle mx-auto"
-                            src="./assets-driving/testimonial-2.jpg"
-                            alt=""
-                          />
-                          <div
-                            className="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                            style={{width: 60px; height: 60px"
-                          >
-                            <i className="fa fa-quote-left fa-2x text-primary"></i>
-                          </div>
-                        </div>
-                        <p className="fs-4">
-                          Dolores sed duo clita tempor justo dolor et stet lorem
-                          kasd labore dolore lorem ipsum. At lorem lorem magna
-                          ut et, nonumy et labore et tempor diam tempor erat.
-                        </p>
-                        <hr className="w-25 mx-auto" />
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
-                      </div>
-                    </div>
-                    <div className="owl-item cloned" style={{width: 840px">
-                      <div className="testimonial-item text-center">
-                        <div className="position-relative mb-5">
-                          <img
-                            className="img-fluid rounded-circle mx-auto"
-                            src="./assets-driving/testimonial-3.jpg"
-                            alt=""
-                          />
-                          <div
-                            className="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                            style={{width: 60px; height: 60px"
-                          >
-                            <i className="fa fa-quote-left fa-2x text-primary"></i>
-                          </div>
-                        </div>
-                        <p className="fs-4">
-                          Dolores sed duo clita tempor justo dolor et stet lorem
-                          kasd labore dolore lorem ipsum. At lorem lorem magna
-                          ut et, nonumy et labore et tempor diam tempor erat.
-                        </p>
-                        <hr className="w-25 mx-auto" />
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
-                      </div>
-                    </div>
-                    <div className="owl-item active" style={{width: 840px">
-                      <div className="testimonial-item text-center">
-                        <div className="position-relative mb-5">
-                          <img
-                            className="img-fluid rounded-circle mx-auto"
-                            src="./assets-driving/testimonial-1.jpg"
-                            alt=""
-                          />
-                          <div
-                            className="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                            style={{width: 60px; height: 60px"
-                          >
-                            <i className="fa fa-quote-left fa-2x text-primary"></i>
-                          </div>
-                        </div>
-                        <p className="fs-4">
-                          Dolores sed duo clita tempor justo dolor et stet lorem
-                          kasd labore dolore lorem ipsum. At lorem lorem magna
-                          ut et, nonumy et labore et tempor diam tempor erat.
-                        </p>
-                        <hr className="w-25 mx-auto" />
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
-                      </div>
-                    </div>
-                    <div className="owl-item" style={{width: 840px">
-                      <div className="testimonial-item text-center">
-                        <div className="position-relative mb-5">
-                          <img
-                            className="img-fluid rounded-circle mx-auto"
-                            src="./assets-driving/testimonial-2.jpg"
-                            alt=""
-                          />
-                          <div
-                            className="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                            style={{width: 60px; height: 60px"
-                          >
-                            <i className="fa fa-quote-left fa-2x text-primary"></i>
-                          </div>
-                        </div>
-                        <p className="fs-4">
-                          Dolores sed duo clita tempor justo dolor et stet lorem
-                          kasd labore dolore lorem ipsum. At lorem lorem magna
-                          ut et, nonumy et labore et tempor diam tempor erat.
-                        </p>
-                        <hr className="w-25 mx-auto" />
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
-                      </div>
-                    </div>
-                    <div className="owl-item" style={{width: 840px">
-                      <div className="testimonial-item text-center">
-                        <div className="position-relative mb-5">
-                          <img
-                            className="img-fluid rounded-circle mx-auto"
-                            src="./assets-driving/testimonial-3.jpg"
-                            alt=""
-                          />
-                          <div
-                            className="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                            style={{width: 60px; height: 60px"
-                          >
-                            <i className="fa fa-quote-left fa-2x text-primary"></i>
-                          </div>
-                        </div>
-                        <p className="fs-4">
-                          Dolores sed duo clita tempor justo dolor et stet lorem
-                          kasd labore dolore lorem ipsum. At lorem lorem magna
-                          ut et, nonumy et labore et tempor diam tempor erat.
-                        </p>
-                        <hr className="w-25 mx-auto" />
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
-                      </div>
-                    </div>
-                    <div className="owl-item cloned" style={{width: 840px">
-                      <div className="testimonial-item text-center">
-                        <div className="position-relative mb-5">
-                          <img
-                            className="img-fluid rounded-circle mx-auto"
-                            src="./assets-driving/testimonial-1.jpg"
-                            alt=""
-                          />
-                          <div
-                            className="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                            style={{width: 60px; height: 60px"
-                          >
-                            <i className="fa fa-quote-left fa-2x text-primary"></i>
-                          </div>
-                        </div>
-                        <p className="fs-4">
-                          Dolores sed duo clita tempor justo dolor et stet lorem
-                          kasd labore dolore lorem ipsum. At lorem lorem magna
-                          ut et, nonumy et labore et tempor diam tempor erat.
-                        </p>
-                        <hr className="w-25 mx-auto" />
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
-                      </div>
-                    </div>
-                    <div className="owl-item cloned" style={{width: 840px">
-                      <div className="testimonial-item text-center">
-                        <div className="position-relative mb-5">
-                          <img
-                            className="img-fluid rounded-circle mx-auto"
-                            src="./assets-driving/testimonial-2.jpg"
-                            alt=""
-                          />
-                          <div
-                            className="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                            style={{width: 60px; height: 60px"
-                          >
-                            <i className="fa fa-quote-left fa-2x text-primary"></i>
-                          </div>
-                        </div>
-                        <p className="fs-4">
-                          Dolores sed duo clita tempor justo dolor et stet lorem
-                          kasd labore dolore lorem ipsum. At lorem lorem magna
-                          ut et, nonumy et labore et tempor diam tempor erat.
-                        </p>
-                        <hr className="w-25 mx-auto" />
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="owl-nav disabled">
-                  <div className="owl-prev">prev</div>
-                  <div className="owl-next">next</div>
-                </div>
-                <div className="owl-dots">
-                  <div className="owl-dot active">
-                    <span></span>
-                  </div>
-                  <div className="owl-dot">
-                    <span></span>
-                  </div>
-                  <div className="owl-dot">
-                    <span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className="container-fluid bg-dark text-light footer my-6 mb-0 py-6 wow fadeIn"
-        data-wow-delay="0.1s"
-        style={{visibility: hidden; animationDelay: 0.1s; animationName: none"
-      >
-        <div className="container">
-          <div className="row g-5">
-            <div className="col-lg-3 col-md-6">
-              <h4 className="text-white mb-4">Get In Touch</h4>
-              <h2 className="text-primary mb-4">
-                <i className="fa fa-car text-white me-2"></i>Drivin
-              </h2>
-              <p className="mb-2">
-                <i className="fa fa-map-marker-alt me-3"></i>123 Street, New
-                York, USA
-              </p>
-              <p className="mb-2">
-                <i className="fa fa-phone-alt me-3"></i>+012 345 67890
-              </p>
-              <p className="mb-2">
-                <i className="fa fa-envelope me-3"></i>info@example.com
-              </p>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <h4 className="text-light mb-4">Quick Links</h4>
-              <a className="btn btn-link" href="">
-                About Us
-              </a>
-              <a className="btn btn-link" href="">
-                Contact Us
-              </a>
-              <a className="btn btn-link" href="">
-                Our Services
-              </a>
-              <a className="btn btn-link" href="">
-                Terms &amp; Condition
-              </a>
-              <a className="btn btn-link" href="">
-                Support
-              </a>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <h4 className="text-light mb-4">Popular Links</h4>
-              <a className="btn btn-link" href="">
-                About Us
-              </a>
-              <a className="btn btn-link" href="">
-                Contact Us
-              </a>
-              <a className="btn btn-link" href="">
-                Our Services
-              </a>
-              <a className="btn btn-link" href="">
-                Terms &amp; Condition
-              </a>
-              <a className="btn btn-link" href="">
-                Support
-              </a>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <h4 className="text-light mb-4">Newsletter</h4>
-              <form action="">
-                <div className="input-group">
-                  <input
-                    type="text"
-                    className="form-control p-3 border-0"
-                    placeholder="Your Email Address"
-                    value=""
-                  />
-                  <button className="btn btn-primary">Sign Up</button>
-                </div>
-              </form>
-              <h6 className="text-white mt-4 mb-3">Follow Us</h6>
-              <div className="d-flex pt-2">
-                <a className="btn btn-square btn-outline-light me-1" href="">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a className="btn btn-square btn-outline-light me-1" href="">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a className="btn btn-square btn-outline-light me-1" href="">
-                  <i className="fab fa-youtube"></i>
-                </a>
-                <a className="btn btn-square btn-outline-light me-0" href="">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className="container-fluid copyright text-light py-4 wow fadeIn"
-        data-wow-delay="0.1s"
-        style={{visibility: hidden; animationDelay: 0.1s; animationName: none"
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              © <a href="#">Your Site Name</a>, All Right Reserved.
-            </div>
-            <div className="col-md-6 text-center text-md-end">
-              Designed By <a href="https://htmlcodex.com/">HTML Codex</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <a
-        href="#"
-        className="btn btn-lg btn-primary btn-lg-square back-to-top"
-        style={{display: none"
-      >
-        <i className="bi bi-arrow-up"></i>
-      </a>
+      <Footer s={s} />
     </>
   );
 }

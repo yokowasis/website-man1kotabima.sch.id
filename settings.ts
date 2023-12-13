@@ -1,13 +1,36 @@
 export const settings = {
   InfoSekolah: {
     Title: "",
+    Logo: "https://1.bp.blogspot.com/-Jl-IvuKLjWc/YGyaWiAkHFI/AAAAAAAACVo/brBouKlkxAE9m52u54EMTPayvnzZEeR4gCNcBGAsYHQ/s2048/Kementerian%2BAgama.png",
     Nama: "MAN 1 Kota Bima",
     SekilasInfo: `MAN 1 Kota Bima adalah sebuah sekolah menengah atas yang berada di bawah naungan Kementerian Agama. MAN 1 Kota Bima memiliki status negeri dan menawarkan jenjang pendidikan Madrasah Aliyah (MA), serta memiliki fasilitas yang memadai, seperti ruang kelas, laboratorium, perpustakaan, masjid, dan lapangan olahraga. MAN 1 Kota Bima memiliki visi untuk menjadi sekolah unggul yang berakhlak mulia, berwawasan global, dan berdaya saing tinggi.`,
     Telepon: "(0374) 42434",
     Email: "info@man1kotabima.sch.id",
-    Alamat:
-      "Jalan Seruni No.06 Saleko Kota Bima, Kecamatan Rasanae Barat, Kota Bima, Provinsi Nusa Tenggara Barat",
+    Alamat: "Jln. Seruni No.06 Kota Bima",
     JamKerja: "Senin s/d Sabtu : 07.00 - 14.30",
+    Facebook: "",
+    Twitter: "",
+    Instagram: "",
+    Youtube: "",
+  },
+
+  Menu: {
+    Home: "/",
+    About: "/pages/about",
+    Info: {
+      Visi_Misi: "/pages/visi-misi",
+      Struktur_Organisasi: "/pages/struktur-organisasi",
+      Jadwal_Pelajaran: "/pages/jadwal-pelajaran",
+    },
+    Contact: "/pages/contact",
+  },
+
+  QuickLinks: {
+    Google: "https://google.com",
+  },
+
+  PopularLinks: {
+    Yahoo: "https://yahoo.com",
   },
 
   HomeBackground:
