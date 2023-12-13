@@ -253,139 +253,6 @@ export default function Index({ allPosts, s }: Props) {
 
       <div className="container-xxl py-6">
         <div className="container">
-          <div className="row g-5">
-            <div
-              className="col-lg-6 wow fadeInUp"
-              data-wow-delay="0.1s"
-              style={{
-                visibility: "hidden",
-                animationDelay: "0.1s",
-                animationName: "none",
-              }}
-            >
-              <h6 className="text-primary text-uppercase mb-2">
-                Why Choose Us!
-              </h6>
-              <h1 className="display-6 mb-4">
-                Best Driving Training Agency In Your City
-              </h1>
-              <p className="mb-5">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                sed stet lorem sit clita duo justo magna dolore erat amet
-              </p>
-              <div className="row gy-5 gx-4">
-                <div
-                  className="col-sm-6 wow fadeIn"
-                  data-wow-delay="0.1s"
-                  style={{
-                    visibility: "hidden",
-                    animationDelay: "0.1s",
-                    animationName: "none",
-                  }}
-                >
-                  <div className="d-flex align-items-center mb-3">
-                    <div className="flex-shrink-0 btn-square bg-primary me-3">
-                      <i className="fa fa-check text-white"></i>
-                    </div>
-                    <h5 className="mb-0">Fully Licensed</h5>
-                  </div>
-                  <span>
-                    Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos
-                  </span>
-                </div>
-                <div
-                  className="col-sm-6 wow fadeIn"
-                  data-wow-delay="0.2s"
-                  style={{
-                    visibility: "hidden",
-                    animationDelay: "0.2s",
-                    animationName: "none",
-                  }}
-                >
-                  <div className="d-flex align-items-center mb-3">
-                    <div className="flex-shrink-0 btn-square bg-primary me-3">
-                      <i className="fa fa-check text-white"></i>
-                    </div>
-                    <h5 className="mb-0">Online Tracking</h5>
-                  </div>
-                  <span>
-                    Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos
-                  </span>
-                </div>
-                <div
-                  className="col-sm-6 wow fadeIn"
-                  data-wow-delay="0.3s"
-                  style={{
-                    visibility: "hidden",
-                    animationDelay: "0.3s",
-                    animationName: "none",
-                  }}
-                >
-                  <div className="d-flex align-items-center mb-3">
-                    <div className="flex-shrink-0 btn-square bg-primary me-3">
-                      <i className="fa fa-check text-white"></i>
-                    </div>
-                    <h5 className="mb-0">Afordable Fee</h5>
-                  </div>
-                  <span>
-                    Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos
-                  </span>
-                </div>
-                <div
-                  className="col-sm-6 wow fadeIn"
-                  data-wow-delay="0.4s"
-                  style={{
-                    visibility: "hidden",
-                    animationDelay: "0.4s",
-                    animationName: "none",
-                  }}
-                >
-                  <div className="d-flex align-items-center mb-3">
-                    <div className="flex-shrink-0 btn-square bg-primary me-3">
-                      <i className="fa fa-check text-white"></i>
-                    </div>
-                    <h5 className="mb-0">Best Trainers</h5>
-                  </div>
-                  <span>
-                    Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-6 wow fadeInUp"
-              data-wow-delay="0.5s"
-              style={{
-                visibility: "hidden",
-                animationDelay: "0.5s",
-                animationName: "none",
-              }}
-            >
-              <div
-                className="position-relative overflow-hidden pe-5 pt-5 h-100"
-                style={{ minHeight: "400px" }}
-              >
-                <img
-                  className="position-absolute w-100 h-100"
-                  src="./assets-driving/about-1.jpg"
-                  alt=""
-                  style={{ objectFit: "cover" }}
-                />
-                <img
-                  className="position-absolute top-0 end-0 bg-white ps-3 pb-3"
-                  src="./assets-driving/about-2.jpg"
-                  alt=""
-                  style={{ width: "200px", height: "200px" }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container-xxl py-6">
-        <div className="container">
           <div
             className="text-center mx-auto mb-5 wow fadeInUp"
             data-wow-delay="0.1s"
@@ -396,184 +263,61 @@ export default function Index({ allPosts, s }: Props) {
               animationName: "none",
             }}
           >
-            <h6 className="text-primary text-uppercase mb-2">Meet The Team</h6>
+            <h6 className="text-primary text-uppercase mb-2">
+              Tuntutan ilmu, kebijaksanaan, dan inspirasi
+            </h6>
             <h1 className="display-6 mb-4">
-              We Have Great Experience Of Driving
+              Pilar Pendidikan, Pengukir Masa depan
             </h1>
           </div>
           <div className="row g-0 team-items">
-            <div
-              className="col-lg-3 col-md-6 wow fadeInUp"
-              data-wow-delay="0.1s"
-              style={{
-                visibility: "hidden",
-                animationDelay: "0.1s",
-                animationName: "none",
-              }}
-            >
-              <div className="team-item position-relative">
-                <div className="position-relative">
-                  <img
-                    className="img-fluid"
-                    src="./assets-driving/team-1.jpg"
-                    alt=""
-                  />
-                  <div className="team-social text-center">
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-instagram"></i>
-                    </a>
+            {s.Guru.map((g, i) => (
+              <div
+                key={i}
+                className="col-lg-3 col-md-6 wow fadeInUp"
+                data-wow-delay="0.1s"
+                style={{
+                  visibility: "hidden",
+                  animationDelay: "0.1s",
+                  animationName: "none",
+                }}
+              >
+                <div className="team-item position-relative">
+                  <div className="position-relative">
+                    <img
+                      className="img-fluid"
+                      src={g.Foto}
+                      alt=""
+                      style={{ height: 200, width: "100%", objectFit: "cover" }}
+                    />
+                    <div className="team-social text-center">
+                      <a
+                        className="btn btn-square btn-outline-primary border-2 m-1"
+                        href={g.Facebook}
+                      >
+                        <i className="fab fa-facebook-f"></i>
+                      </a>
+                      <a
+                        className="btn btn-square btn-outline-primary border-2 m-1"
+                        href={g.Twitter}
+                      >
+                        <i className="fab fa-twitter"></i>
+                      </a>
+                      <a
+                        className="btn btn-square btn-outline-primary border-2 m-1"
+                        href={g.Instagram}
+                      >
+                        <i className="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div className="bg-light text-center p-4">
+                    <h5 className="mt-2">{g.Nama}</h5>
+                    <span>{g.Mapel}</span>
                   </div>
                 </div>
-                <div className="bg-light text-center p-4">
-                  <h5 className="mt-2">Full Name</h5>
-                  <span>Trainer</span>
-                </div>
               </div>
-            </div>
-            <div
-              className="col-lg-3 col-md-6 wow fadeInUp"
-              data-wow-delay="0.3s"
-              style={{
-                visibility: "hidden",
-                animationDelay: "0.3s",
-                animationName: "none",
-              }}
-            >
-              <div className="team-item position-relative">
-                <div className="position-relative">
-                  <img
-                    className="img-fluid"
-                    src="./assets-driving/team-2.jpg"
-                    alt=""
-                  />
-                  <div className="team-social text-center">
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  </div>
-                </div>
-                <div className="bg-light text-center p-4">
-                  <h5 className="mt-2">Full Name</h5>
-                  <span>Trainer</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-3 col-md-6 wow fadeInUp"
-              data-wow-delay="0.5s"
-              style={{
-                visibility: "hidden",
-                animationDelay: "0.5s",
-                animationName: "none",
-              }}
-            >
-              <div className="team-item position-relative">
-                <div className="position-relative">
-                  <img
-                    className="img-fluid"
-                    src="./assets-driving/team-3.jpg"
-                    alt=""
-                  />
-                  <div className="team-social text-center">
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  </div>
-                </div>
-                <div className="bg-light text-center p-4">
-                  <h5 className="mt-2">Full Name</h5>
-                  <span>Trainer</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-3 col-md-6 wow fadeInUp"
-              data-wow-delay="0.7s"
-              style={{
-                visibility: "hidden",
-                animationDelay: "0.7s",
-                animationName: "none",
-              }}
-            >
-              <div className="team-item position-relative">
-                <div className="position-relative">
-                  <img
-                    className="img-fluid"
-                    src="./assets-driving/team-4.jpg"
-                    alt=""
-                  />
-                  <div className="team-social text-center">
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                    <a
-                      className="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                    >
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  </div>
-                </div>
-                <div className="bg-light text-center p-4">
-                  <h5 className="mt-2">Full Name</h5>
-                  <span>Trainer</span>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

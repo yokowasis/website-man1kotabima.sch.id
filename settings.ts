@@ -49,6 +49,41 @@ export const settings = {
     },
   ],
 
+  Guru: [
+    {
+      Nama: "Guru 1",
+      Foto: "https://images.pexels.com/photos/7092613/pexels-photo-7092613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      Mapel: "Bahasa Inggris",
+      Facebook: "",
+      Twitter: "",
+      Instagram: "",
+    },
+    {
+      Nama: "Guru 2",
+      Foto: "https://images.pexels.com/photos/9159042/pexels-photo-9159042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      Mapel: "Bahasa Inggris",
+      Facebook: "",
+      Twitter: "",
+      Instagram: "",
+    },
+    {
+      Nama: "Guru 3",
+      Foto: "https://images.pexels.com/photos/7750704/pexels-photo-7750704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      Mapel: "Bahasa Inggris",
+      Facebook: "",
+      Twitter: "",
+      Instagram: "",
+    },
+    {
+      Nama: "Guru 4",
+      Foto: "https://images.pexels.com/photos/8087857/pexels-photo-8087857.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      Mapel: "Bahasa Inggris",
+      Facebook: "",
+      Twitter: "",
+      Instagram: "",
+    },
+  ],
+
   Sambutan: `
     Selamat datang di MAN 1 Kota Bima,
 
