@@ -5,7 +5,7 @@ export const settings = {
     Gambar:
       "https://1.bp.blogspot.com/-nbXsTP3itbw/YKHYwZ_dAiI/AAAAAAAAA_g/iMZS7qC9mLkCdJ2DxTu3QvdOJnT7TSm9ACLcBGAsYHQ/s960/man1-2.png",
     Gambar2:
-      "https://scontent.fdps5-1.fna.fbcdn.net/v/t1.6435-9/31636174_149753559206048_7987604276715192320_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=2be8e3&_nc_eui2=AeHXd0PxXZq5rEwaUXpr8wQ4r1BgOffBnOmvUGA598Gc6ehK__JLM6XyWk6ZK2r7oPJwDAywJUIsCJks6LnE2yw4&_nc_ohc=U6y56kjUwi0AX817462&_nc_ht=scontent.fdps5-1.fna&oh=00_AfAhi71ogZmNeQYP3Jl-e2Z4Cpwsv8pyUjeusO6KdRDmFA&oe=65A0F820",
+      "https://4.bp.blogspot.com/-_-id53OE1C4/XIdRbNMLdbI/AAAAAAAAACs/YWCcH-X8VD89M5pPrMTO2qvbgYXj-UZ-QCLcBGAs/s1600/53742505_2293527304222890_7245120146245681152_n.jpg",
     Nama: "MAN 1 Kota Bima",
     SekilasInfo: `MAN 1 Kota Bima adalah sebuah sekolah menengah atas yang berada di bawah naungan Kementerian Agama. MAN 1 Kota Bima memiliki status negeri dan menawarkan jenjang pendidikan Madrasah Aliyah (MA), serta memiliki fasilitas yang memadai, seperti ruang kelas, laboratorium, perpustakaan, masjid, dan lapangan olahraga. MAN 1 Kota Bima memiliki visi untuk menjadi sekolah unggul yang berakhlak mulia, berwawasan global, dan berdaya saing tinggi.`,
     Telepon: "(0374) 42434",
@@ -112,7 +112,9 @@ export const settings = {
   },
 
   PopularLinks: {
-    Yahoo: "https://yahoo.com",
+    RDM: "https://rdm.man1kotabima.sch.id",
+    "Pendaftaran PPDB": "https://aplikasi.man1kotabima.sch.id/ppdb-signup/",
+    "Login PPDB": "https://aplikasi.man1kotabima.sch.id",
   },
 
   HomeBackground:
@@ -145,14 +147,12 @@ export const settings = {
     image:
       "https://images.pexels.com/photos/1236421/pexels-photo-1236421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 
-    Visi: "Menjadi pusat pendidikan unggul yang mengintegrasikan keilmuan dan nilai-nilai keagamaan, mencetak generasi terampil, beriman, dan berakhlak mulia untuk masa depan yang berkelanjutan.",
+    Visi: "Unggul, Berprestasi dan Berakhlak Mulia",
 
     Misi: [
-      "Memberikan pendidikan berkualitas tinggi yang mencakup aspek akademis, spiritual, dan karakter untuk membentuk individu yang beriman dan bertanggung jawab",
-      "Mengembangkan kurikulum yang holistik, mengintegrasikan pengetahuan umum dengan nilai-nilai agama Islam, serta menginspirasi pemikiran kritis dan kreativitas",
-      "Mendorong partisipasi aktif dalam kegiatan ekstrakurikuler, seminar, dan kegiatan keagamaan untuk memperluas wawasan siswa dan memperdalam pemahaman mereka akan nilai-nilai keagamaan",
-      "Melibatkan komunitas pendidikan dalam upaya menciptakan lingkungan belajar yang inklusif, inovatif, dan berorientasi pada perkembangan individu secara menyeluruh.",
-      "Memotivasi siswa untuk menjadi pemimpin yang bertanggung jawab, peduli terhadap masyarakat, serta memiliki komitmen terhadap perubahan positif dalam lingkungan sekitarnya.",
+      "Meningkatkan keimanan ketaqwaan terhadap Tuhan Yang Maha Esa",
+      "Meningkatkan perolehan nilai Ujian Nasioanal",
+      "Meningkatkan jumlah siswa yang diterima di Perguruan Tinggi Negeri",
     ],
   },
 };

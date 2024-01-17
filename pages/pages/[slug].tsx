@@ -41,7 +41,7 @@ export default function Post({ post, morePosts, preview, s }: Props) {
           <nav aria-label="breadcrumb animated slideInDown">
             <ol className="breadcrumb justify-content-center mb-0">
               <li className="breadcrumb-item text-white">Home</li>
-              <li className="breadcrumb-item text-white">Posts</li>
+              <li className="breadcrumb-item text-white">Pages</li>
               <li
                 className="breadcrumb-item text-primary active"
                 aria-current="page"

@@ -39,14 +39,16 @@ const Footer = (props: { s: Settings }) => {
               </p>
             </div>
             <div className="col-lg-3 col-md-6">
-              <h4 className="text-light mb-4">Quick Links</h4>
-              {Object.keys(props.s.QuickLinks).map((key, index) => {
-                return (
-                  <a className="btn btn-link" href={props.s.QuickLinks[key]}>
-                    {key}
-                  </a>
-                );
-              })}
+              <h4 className="text-light mb-4">Visi</h4>
+              <p>{props.s.VisiMisi.Visi}</p>
+              <h4 className="text-light mb-4">Misi</h4>
+              <div>
+                <ol>
+                  {props.s.VisiMisi.Misi.map((m) => (
+                    <li>{m}</li>
+                  ))}
+                </ol>
+              </div>
             </div>
             <div className="col-lg-3 col-md-6">
               <h4 className="text-light mb-4">Popular Links</h4>
