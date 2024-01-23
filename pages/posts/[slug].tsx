@@ -32,6 +32,7 @@ export default function Post({ post, morePosts, preview, s }: Props) {
           animationDelay: "0.1s",
           animationName: "fadeIn",
           background: `linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(${post.coverImage}) center center no-repeat`,
+          backgroundSize: "cover",
         }}
       >
         <div className="container text-center">
@@ -61,30 +62,6 @@ export default function Post({ post, morePosts, preview, s }: Props) {
         </div>
       </div>
       <Footer s={s} />
-      {/* <Layout preview={preview}>
-        <Container>
-          <Header />
-          {router.isFallback ? (
-            <PostTitle>Loading…</PostTitle>
-          ) : (
-            <>
-              <article classNameName="mb-32">
-                <Head>
-                  <title>{title}</title>
-                  <meta property="og:image" content={post.ogImage.url} />
-                </Head>
-                <PostHeader
-                  title={post.title}
-                  coverImage={post.coverImage}
-                  date={post.date}
-                  author={post.author}
-                />
-                <PostBody content={post.content} />
-              </article>
-            </>
-          )}
-        </Container>
-      </Layout> */}
     </>
   );
 }
