@@ -1,12 +1,9 @@
 ---
 title: "PPDB"
-coverImage: "/img/banner.jpg"
-date: "2020-03-16T05:35:07.322Z"
+date: "2023-01-01T00:00:00.000Z"
 author:
   name: Admin
   picture: "/assets/blog/authors/joe.jpeg"
-ogImage:
-  url: "/img/banner.jpg"
 ---
 
 # Penerimaan Peserta Didik Baru 2023/2024

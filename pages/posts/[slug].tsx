@@ -1,12 +1,13 @@
+import { getPostBySlug, getAllPosts } from "../../lib/api";
+
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import { getPostBySlug, getAllPosts } from "../../lib/api";
-import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type PostType from "../../interfaces/post";
 import Header from "../header";
 import Footer from "../footer";
 import { Settings, settings } from "../../settings";
+import Head from "next/head";
 
 type Props = {
   s: Settings;
@@ -17,12 +18,16 @@ type Props = {
 
 export default function Post({ post, morePosts, preview, s }: Props) {
   const router = useRouter();
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
+  const title = `${post.title} | Official Website ${s.InfoSekolah.Nama}`;
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta property="og:image" content={post?.ogImage?.url || ""} />
+      </Head>
       <Header s={s} />
       <div
         className="container-fluid page-header py-6 my-6 mt-0 wow fadeIn mb-0"
@@ -31,7 +36,9 @@ export default function Post({ post, morePosts, preview, s }: Props) {
           visibility: "visible",
           animationDelay: "0.1s",
           animationName: "fadeIn",
-          background: `linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(${post.coverImage}) center center no-repeat`,
+          background: `linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(${
+            post.coverImage || "/img/banner.jpg"
+          }) center center no-repeat`,
           backgroundSize: "cover",
         }}
       >
@@ -42,7 +49,7 @@ export default function Post({ post, morePosts, preview, s }: Props) {
           <nav aria-label="breadcrumb animated slideInDown">
             <ol className="breadcrumb justify-content-center mb-0">
               <li className="breadcrumb-item text-white">Home</li>
-              <li className="breadcrumb-item text-white">Posts</li>
+              <li className="breadcrumb-item text-white">Pages</li>
               <li
                 className="breadcrumb-item text-primary active"
                 aria-current="page"
@@ -54,6 +61,11 @@ export default function Post({ post, morePosts, preview, s }: Props) {
         </div>
       </div>
       <div className="container pt-5">
+        <div className="row">
+          <div className="col mb-3">
+            Penulis : {post.author.name}, {post.date}
+          </div>
+        </div>
         <div className="row">
           <div
             className="col"
