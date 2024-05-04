@@ -1,1 +1,44 @@
-test
+-----------
+Standard Template Library
+-----------
+
+#include <iostream>
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main() {
+  
+  return 0;
+}
+
+-----------
+Mencetak Output
+-----------
+cout << 123123 << endl;
+
+-----------
+Memasukkan Input dengan variable A
+-----------
+ll A;
+cin >> A;
+
+-----------
+Memasukkan Input dengan variable A, B, C
+-----------
+ll  A, B, C;
+cin >> A >> B >> C;
+
+-----------
+Memasukkan Input dengan array S dengan panjang N
+-----------
+ll N;
+cin >> N;
+ll S[N];
+for (ll i = 0; i < N; i++) {
+  cin >> S[i];
+}
+
+
+
+
