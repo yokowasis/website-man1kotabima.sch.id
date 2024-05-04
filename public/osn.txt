@@ -30,10 +30,8 @@ ll  A, B, C;
 cin >> A >> B >> C;
 
 -----------
-Memasukkan Input dengan array dengan nama variable M dengan panjang N
+Memasukkan Input ke dalam array dengan nama variable M dengan panjang N
 -----------
-ll N;
-cin >> N;
 ll M[N];
 for (ll i = 0; i < N; i++) {
   cin >> M[i];
@@ -54,3 +52,33 @@ while (i < 100) {
   cout << i << endl;
   i = i * 2;
 }
+
+
+-----------
+IF. Dilakukan jika kondisi benar. Jika kondisi salah, tidak dilakukan apa-apa.
+-----------
+if (A == B) {
+  cout << 1 << endl;
+}
+
+
+-----------
+IF ELSE. Dilakukan jika kondisi benar. Jika kondisi salah, dilakukan yang di ELSE
+-----------
+if (A == B) {
+  cout << 1 << endl;
+} else {
+  cout << 2 << endl;
+}
+
+-----------
+IF ELSE IF. Dilakukan jika kondisi benar. Jika kondisi salah, cek IF selaanjutnya.
+-----------
+if (A == 1 && B == 2) {
+  cout << 1 << endl;
+} else if ( A == 3 && B == 4) {
+  cout << 2 << endl;
+} else {
+  cout << 3 << endl;
+}
+
