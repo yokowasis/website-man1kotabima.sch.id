@@ -30,15 +30,27 @@ ll  A, B, C;
 cin >> A >> B >> C;
 
 -----------
-Memasukkan Input dengan array S dengan panjang N
+Memasukkan Input dengan array dengan nama variable M dengan panjang N
 -----------
 ll N;
 cin >> N;
-ll S[N];
+ll M[N];
 for (ll i = 0; i < N; i++) {
-  cin >> S[i];
+  cin >> M[i];
 }
 
+-----------
+Pengulangan For. Dimulai dari 0 sampai n-1
+-----------
+for (ll i = 0; i < n; i++) {
+  cout << i << endl;
+}
 
-
-
+-----------
+Pengulangan while, selama kondisi benar (i<100)
+-----------
+ll i = 0;
+while (i < 100) {
+  cout << i << endl;
+  i = i * 2;
+}
