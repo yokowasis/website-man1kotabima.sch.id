@@ -38,6 +38,20 @@ for (ll i = 0; i < N; i++) {
 }
 
 -----------
+Operasi Matematika
+-----------
+- Pembagian (A.0 / B). .0 wajib ditambahkan agar hasilnya adalah desimal.
+- Perkalian ( A * B )
+- Penjumlahan (  A + B )
+- Pengurangan ( A - B )
+- Modulus ( A % B ). Sisa pembagian antara A dan B. 
+  Contoh : 
+  - 5 % 2 = 1. Karena kelipatan 2 yang paling mendekati 5 adalah 4, sisanya adalah 1.
+  - 4 % 2 = 0. Karena 4 adalah kelipatan 2.
+  - 2 % 10 = 2. Karena 2 tidak bisa dibagi 10, maka sisa adalah 2.
+  - 69 % 10 = 9. Karena kelipatan 10 yang paling mendekati 69 adalah 60, sisanya adalah 9.
+
+-----------
 Pengulangan For. Dimulai dari 0 sampai n-1
 -----------
 for (ll i = 0; i < n; i++) {
