@@ -3,4 +3,9 @@
 #define ll long long
 using namespace std;
 
-int main() { return 0; }
+int main() {
+  int n, m;
+  cin >> n >> m;
+
+  return 0;
+}

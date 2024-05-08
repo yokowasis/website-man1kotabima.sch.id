@@ -11,6 +11,10 @@ author:
 1. Pendaftaran dapat diakses melalui Link : [PENDAFTARAN PPDB](https://aplikasi.man1kotabima.sch.id/ppdb/daftar)
 2. Pengisian Biodata (Setelah Pendaftaran) : [LOGIN PENGISIAN BIODATA](https://aplikasi.man1kotabima.sch.id/)
 
+## Cek Kelulusan
+
+1. Cek Kelulusan dapat di akses melalui link : [CEK KELULUSAN](https://aplikasiman1kotabima.sch.id/kelulusan)
+
 ## Contact Person :
 
 1. +62823-4956-1226
