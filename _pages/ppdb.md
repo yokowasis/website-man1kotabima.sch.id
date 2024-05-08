@@ -13,7 +13,7 @@ author:
 
 ## Cek Kelulusan
 
-1. Cek Kelulusan dapat di akses melalui link : [CEK KELULUSAN](https://aplikasiman1kotabima.sch.id/kelulusan)
+1. Cek Kelulusan dapat di akses melalui link : [CEK KELULUSAN](https://aplikasi.man1kotabima.sch.id/kelulusan)
 
 ## Contact Person :
 
