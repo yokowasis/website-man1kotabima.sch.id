@@ -11,6 +11,11 @@ author:
 1. Pendaftaran dapat diakses melalui Link : [PENDAFTARAN PPDB](https://aplikasi.man1kotabima.sch.id/ppdb/daftar)
 2. Pengisian Biodata (Setelah Pendaftaran) : [LOGIN PENGISIAN BIODATA](https://aplikasi.man1kotabima.sch.id/)
 
+## Info Jadwal
+
+1. Pendaftaran ditutup pada tanggal 5 Juni 2024.
+2. Jadwal Tes Jalur Reguler adalah tanggal 6-8 Juni 2024. Siswa dapat memilih kapan tes akan dilaksanakan di antara ketiga hari tersebut.
+
 ## Cek Kelulusan
 
 1. Cek Kelulusan dapat di akses melalui link : [CEK KELULUSAN](https://aplikasi.man1kotabima.sch.id/kelulusan)
