@@ -44,10 +44,10 @@ const Slider = ({ s }: { s: Settings }) => {
                             PPDB
                           </a>
                           <a
-                            href=""
+                            href="/pages/ksm"
                             className="btn btn-light py-sm-3 px-sm-5 ms-3"
                           >
-                            INFO TERBARU
+                            PENDAFTARAN KSM
                           </a>
                         </div>
                       </div>
