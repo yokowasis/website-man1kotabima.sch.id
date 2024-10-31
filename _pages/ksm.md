@@ -6,4 +6,6 @@ author:
   picture: "/assets/blog/authors/joe.jpeg"
 ---
 
-<iframe src="https://aplikasi.man1kotabima.sch.id//page/viewforms/?id=KSM 2024" width="100%" height="500px"></iframe>
+<div style="max-width:700px; margin:auto">
+  <iframe src="https://aplikasi.man1kotabima.sch.id/page/viewforms/?id=1" width="100%" height="500px"></iframe>
+</div>
