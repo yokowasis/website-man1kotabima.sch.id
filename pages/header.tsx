@@ -100,7 +100,7 @@ const Header = (props: { s: Settings }) => {
                 });
 
                 return (
-                  <div className="nav-item dropdown">
+                  <div key={i} className="nav-item dropdown">
                     <a
                       href="#"
                       className="nav-link dropdown-toggle"

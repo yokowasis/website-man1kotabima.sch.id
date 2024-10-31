@@ -44,8 +44,8 @@ const Footer = (props: { s: Settings }) => {
               <h4 className="text-light mb-4">Misi</h4>
               <div>
                 <ol>
-                  {props.s.VisiMisi.Misi.map((m) => (
-                    <li>{m}</li>
+                  {props.s.VisiMisi.Misi.map((m, i) => (
+                    <li key={i}>{m}</li>
                   ))}
                 </ol>
               </div>
@@ -54,7 +54,11 @@ const Footer = (props: { s: Settings }) => {
               <h4 className="text-light mb-4">Popular Links</h4>
               {Object.keys(props.s.PopularLinks).map((key, index) => {
                 return (
-                  <a className="btn btn-link" href={props.s.PopularLinks[key]}>
+                  <a
+                    key={index}
+                    className="btn btn-link"
+                    href={props.s.PopularLinks[key]}
+                  >
                     {key}
                   </a>
                 );
