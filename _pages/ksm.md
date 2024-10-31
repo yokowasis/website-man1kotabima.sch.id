@@ -13,7 +13,7 @@ author:
 ></script>
 
 <div style="max-width:700px; margin:auto"> 
-  <iframe style="width:100%" src="https://https://aplikasi.man1kotabima.sch.id//page/viewforms/?id=1" id="myIframe"></iframe>
+  <iframe style="width:100%" src="https://aplikasi.man1kotabima.sch.id//page/viewforms/?id=1" id="myIframe"></iframe>
 </div>
 
 <script>
