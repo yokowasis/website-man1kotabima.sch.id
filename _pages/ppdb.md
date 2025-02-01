@@ -8,6 +8,8 @@ author:
 
 ## Penerimaan Peserta Didik Baru 2025/2026
 
+1. Pengisian formulir dapat dilakukan melalui halaman [FORMULIR PPDB](/pages/form-ppdb).
+
 ## Info Jadwal
 
 1. Pendaftaran ditutup pada tanggal 25 Juni 2024.
@@ -26,24 +28,3 @@ Bagi yang dinyatakan lulus, silahkan melakukan daftar ulang pada tanggal 1-15 Ma
 
 1. +62823-4956-1226
 2. +62852-3995-9695
-
-<script
-  src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child"
-  type="text/javascript"
-  async
-></script>
-
-<div style="max-width:700px; margin:auto"> 
-  <iframe style="width:100%" src="https://aplikasi.man1kotabima.sch.id//page/viewforms/?id=26" id="myIframe"></iframe>
-</div>
-
-<script>
-  var iframe = document.getElementById('myIframe');
-  window.addEventListener('message', function(event) {
-    var data = event.data;
-    if (data.messageType === 'setHeight') {
-      // Set the iframe height
-      iframe.style.height = data.height + 10+ 'px';
-    }
-  });
-</script>
