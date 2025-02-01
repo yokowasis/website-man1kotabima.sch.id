@@ -8,20 +8,6 @@ author:
 
 ## Penerimaan Peserta Didik Baru 2025/2026
 
-Jalur Boarding dan Prestasi
-
-1. Pendaftaran dan Pemberkasan: 1 - 18 Februari 2025
-2. Tes Wawancara: 20 Februari - 21 Februari 2025
-3. Pengumuman: 24 Februari 2025
-4. Daftar Ulang: 1 - 15 Maret 2025
-
-Jalur Reguler
-
-1. Pendaftaran: 1 Juni - 24 Juni 2025
-2. Tes Tulis dan Wawancara: 25 - 26 Juni 2025
-3. Pengumuman: 28 Juni 2025
-4. Daftar Ulang: 28 Juni - 5 Juli 2025
-
 ## Info Jadwal
 
 1. Pendaftaran ditutup pada tanggal 25 Juni 2024.
