@@ -26,8 +26,7 @@ author:
     }
     if (data.messageType === 'scrollToTop') {
       // Scroll to top of iframe
-      iframe.scrollIntoView();
-      window.scrollBy(0, -150);
+      window.scrollTo(0, iframe.offsetTop - 150);
     }
   });
 </script>
