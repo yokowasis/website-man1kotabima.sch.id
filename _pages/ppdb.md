@@ -26,5 +26,6 @@ Bagi yang dinyatakan lulus, silahkan melakukan daftar ulang pada tanggal 1-15 Ma
 
 ## Contact Person :
 
-1. +62823-4956-1226
-2. +62852-3995-9695
+1. Marfuatun, S.Pd : 0823-4956-1226
+2. Usman, S.Pd : 0853-3305-9015
+3. Uswatun Hasanah, S.Pd: 0852-0570-7777
