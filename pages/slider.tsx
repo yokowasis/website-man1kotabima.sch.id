@@ -45,6 +45,12 @@ const Slider = ({ s }: { s: Settings }) => {
                           </a>
                           <a
                             href="/pages/ksm"
+                            className="btn btn-success py-sm-3 px-sm-5 ms-3"
+                          >
+                            CETAK SKL
+                          </a>
+                          <a
+                            href="/pages/ksm"
                             className="btn btn-light py-sm-3 px-sm-5 ms-3"
                           >
                             PENDAFTARAN KSM

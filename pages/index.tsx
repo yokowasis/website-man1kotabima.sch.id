@@ -22,6 +22,54 @@ export default function Index({ allPosts, s }: Props) {
 
       <Slider s={s} />
 
+      <div className="container-xxl courses my-6 py-6 pb-0">
+        <div className="container">
+          <div
+            className="text-center mx-auto mb-5 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style={{
+              maxWidth: "500px",
+              visibility: "hidden",
+              animationDelay: "0.1s",
+              animationName: "none",
+            }}
+          >
+            <h6 className="text-primary text-uppercase mb-2">BERITA</h6>
+            <h1 className="display-6 mb-4">Berita Terbaru Saat Ini</h1>
+          </div>
+          <div className="row g-4 justify-content-center">
+            {allPosts.map((post, i) => (
+              <div key={i} className="col-lg-4 col-md-6 wow fadeInUp">
+                <div className="courses-item d-flex flex-column bg-white overflow-hidden h-100">
+                  <div className="text-center p-4 pt-0">
+                    <h5 className="mb-3 mt-4">
+                      <a className="text-dark" href={`/posts/${post.slug}`}>
+                        {post.title}
+                      </a>
+                    </h5>
+                    <p>{post.excerpt}</p>
+                    <ol className="breadcrumb justify-content-center mb-0">
+                      <li className="breadcrumb-item small">
+                        <i className="fa fa-calendar-alt text-primary me-2"></i>
+                        {post.date}
+                      </li>
+                    </ol>
+                  </div>
+                  <div className="position-relative mt-auto">
+                    <img className="img-fluid" src={post.coverImage} alt="" />
+                    <div className="courses-overlay">
+                      <a className="btn btn-outline-primary border-2" href="">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="container-xxl py-6">
         <div className="container">
           <div className="row g-5">
@@ -74,54 +122,6 @@ export default function Index({ allPosts, s }: Props) {
                 ></div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container-xxl courses my-6 py-6 pb-0">
-        <div className="container">
-          <div
-            className="text-center mx-auto mb-5 wow fadeInUp"
-            data-wow-delay="0.1s"
-            style={{
-              maxWidth: "500px",
-              visibility: "hidden",
-              animationDelay: "0.1s",
-              animationName: "none",
-            }}
-          >
-            <h6 className="text-primary text-uppercase mb-2">EVENTS</h6>
-            <h1 className="display-6 mb-4">Curent Events on Our School</h1>
-          </div>
-          <div className="row g-4 justify-content-center">
-            {allPosts.map((post, i) => (
-              <div key={i} className="col-lg-4 col-md-6 wow fadeInUp">
-                <div className="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                  <div className="text-center p-4 pt-0">
-                    <h5 className="mb-3 mt-4">
-                      <a className="text-dark" href={`/posts/${post.slug}`}>
-                        {post.title}
-                      </a>
-                    </h5>
-                    <p>{post.excerpt}</p>
-                    <ol className="breadcrumb justify-content-center mb-0">
-                      <li className="breadcrumb-item small">
-                        <i className="fa fa-calendar-alt text-primary me-2"></i>
-                        {post.date}
-                      </li>
-                    </ol>
-                  </div>
-                  <div className="position-relative mt-auto">
-                    <img className="img-fluid" src={post.coverImage} alt="" />
-                    <div className="courses-overlay">
-                      <a className="btn btn-outline-primary border-2" href="">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
@@ -212,7 +212,7 @@ export const getStaticProps = async () => {
     "excerpt",
   ]);
 
-  settings.InfoSekolah.Title = `Official Website ${settings.InfoSekolah.Nama}`;
+  settings.InfoSekolah.Title = `Website Resmi ${settings.InfoSekolah.Nama}`;
 
   return {
     props: { allPosts, s: settings },
