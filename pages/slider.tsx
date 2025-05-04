@@ -93,7 +93,7 @@ const Slider = ({ s }: { s: Settings }) => {
       <div className="container-fluid facts py-5 pt-lg-0">
         <div className="container py-5 pt-lg-0">
           <div className="row gx-0">
-            {s.Keunggulan.map((item, i) => {
+            {s.Keunggulan.map((item, _) => {
               return (
                 <div
                   className="col-lg-4 wow fadeIn"
@@ -110,7 +110,7 @@ const Slider = ({ s }: { s: Settings }) => {
                   >
                     <div className="d-flex">
                       <div className="flex-shrink-0 btn-lg-square bg-primary">
-                        <i className="fa fa-car text-white"></i>
+                        <i className={`${item.icon} text-white`}></i>
                       </div>
                       <div className="ps-4">
                         <h5>{item.judul}</h5>

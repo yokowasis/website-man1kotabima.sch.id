@@ -38,15 +38,18 @@ export const settings = {
 
   Keunggulan: [
     {
+      icon: "fas fa-graduation-cap",
       judul: "Akademik Berkualitas",
       deskripsi: "Menyediakan kurikulum yang komprehensif dan terkini",
     },
     {
+      icon: "fas fa-building",
       judul: "Fasilitas Modern",
       deskripsi:
         "Fasilitas modern dan lingkungan yang mendukung proses belajar-mengajar",
     },
     {
+      icon: "fas fa-palette",
       judul: "Ekstrakurikuler Variatif",
       deskripsi:
         "Menawarkan beragam kegiatan ekstrakurikuler yang memperkaya pengalaman siswa",
