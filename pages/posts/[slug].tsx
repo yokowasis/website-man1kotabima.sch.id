@@ -61,9 +61,21 @@ export default function Post({ post, morePosts, preview, s }: Props) {
         </div>
       </div>
       <div className="container pt-5" id="post">
-        <div className="row">
-          <div className="col mb-3">
-            Penulis : {post.author.name}, {post.date}
+        <div className="row mb-3" style={{ borderBottom: "solid 1px #ccc" }}>
+          <div className="col mb-3 d-flex gap-3">
+            <img
+              src={post.author.picture}
+              style={{
+                width: 45,
+                height: 45,
+              }}
+            />
+            <div>
+              <p style={{ fontWeight: "bold" }} className="m-0 text-success">
+                {post.author.name}
+              </p>
+              <p className="m-0 text-primary">{post.date}</p>
+            </div>
           </div>
         </div>
         <div className="row">

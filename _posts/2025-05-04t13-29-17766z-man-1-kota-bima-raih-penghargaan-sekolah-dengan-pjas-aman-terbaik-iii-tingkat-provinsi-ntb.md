@@ -19,4 +19,3 @@ ogImage:
 <p><strong>#MAN1KotaBima #PJASAman #BPOMNTB #SekolahSehat #PrestasiPendidikan</strong></p>
 <p><em>(Sumber: Piagam Penghargaan BPOM NTB, 30 April 2025)<br>Kontributor : lutfi<br>editor : <a href="mailto:fikri@2025">fikri@2025</a></em></p>
 <p><em>Sumber : <a href="https://faraltih.com/berita/detail/man-1-kota-bima-raih-penghargaan-sekolah-dengan-pjas-aman-terbaik-iii-tingkat-provinsi-ntb">https://faraltih.com/berita/detail/man-1-kota-bima-raih-penghargaan-sekolah-dengan-pjas-aman-terbaik-iii-tingkat-provinsi-ntb</a></em></p>
-
