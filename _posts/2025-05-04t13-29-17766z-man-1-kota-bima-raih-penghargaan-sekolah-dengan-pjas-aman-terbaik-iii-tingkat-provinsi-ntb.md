@@ -1,13 +1,13 @@
 ---
-title: 'MAN 1 Kota Bima Raih Penghargaan Sekolah dengan PJAS Aman Terbaik III Tingkat Provinsi NTB'
-excerpt: '**Ringkasan:**  MAN 1 Kota Bima meraih penghargaan sebagai Sekolah dengan PJAS (Pangan Jajanan Anak Sekolah) Aman Terbaik III tingkat SMA/MA se-Provinsi NTB tahun 2025 dari BPOM melalui Balai Besar POM di Mataram. Penghargaan ini diterima oleh Kepala Sekolah Drs. H. M. Adnan dan didampingi guru aktif dalam program, Syamsul Lutfi, S.Pd. Penghargaan ini merupakan hasil kerja keras seluruh warga sekolah dalam menjaga keamanan pangan dan memberikan edukasi kepada siswa. MAN 1 Kota Bima berkomitmen untuk terus meningkatkan kualitas pengawasan dan edukasi terkait PJAS.'
-coverImage: 'https://cdnhost2.bimasoft.web.id/api/files/uploads/coverImage-1746364634585.png'
-date: '2025-05-04T13:29:17.766Z'
+title: "MAN 1 Kota Bima Raih Penghargaan Sekolah dengan PJAS Aman Terbaik III Tingkat Provinsi NTB"
+excerpt: "MAN 1 Kota Bima meraih penghargaan sebagai Sekolah dengan PJAS (Pangan Jajanan Anak Sekolah) Aman Terbaik III tingkat SMA/MA se-Provinsi NTB tahun 2025 dari BPOM melalui Balai Besar POM di Mataram."
+coverImage: "https://cdnhost2.bimasoft.web.id/api/files/uploads/coverImage-1746364634585.png"
+date: "2025-05-04T13:29:17.766Z"
 author:
   name: Wasis H.S, S.Pd., M.Kom.
-  picture: 'https://cdnhost2.bimasoft.web.id/api/files/uploads/author_picture-1746364519114.jpg'
+  picture: "https://cdnhost2.bimasoft.web.id/api/files/uploads/author_picture-1746364519114.jpg"
 ogImage:
-  url: 'https://cdnhost2.bimasoft.web.id/api/files/uploads/ogimage-2025-05-04T13:29:17.766Z-man-1-kota-bima-raih-penghargaan-sekolah-dengan-pjas-aman-terbaik-iii-tingkat-provinsi-ntb.jpg'
+  url: "https://cdnhost2.bimasoft.web.id/api/files/uploads/ogimage-2025-05-04T13:29:17.766Z-man-1-kota-bima-raih-penghargaan-sekolah-dengan-pjas-aman-terbaik-iii-tingkat-provinsi-ntb.jpg"
 ---
 
 <p><strong>MAN 1 Kota Bima Raih Penghargaan Sekolah dengan PJAS Aman Terbaik III Tingkat Provinsi NTB</strong></p>
@@ -19,3 +19,4 @@ ogImage:
 <p><strong>#MAN1KotaBima #PJASAman #BPOMNTB #SekolahSehat #PrestasiPendidikan</strong></p>
 <p><em>(Sumber: Piagam Penghargaan BPOM NTB, 30 April 2025)<br>Kontributor : lutfi<br>editor : <a href="mailto:fikri@2025">fikri@2025</a></em></p>
 <p><em>Sumber : <a href="https://faraltih.com/berita/detail/man-1-kota-bima-raih-penghargaan-sekolah-dengan-pjas-aman-terbaik-iii-tingkat-provinsi-ntb">https://faraltih.com/berita/detail/man-1-kota-bima-raih-penghargaan-sekolah-dengan-pjas-aman-terbaik-iii-tingkat-provinsi-ntb</a></em></p>
+
