@@ -76,7 +76,7 @@ let TITLE = "Hello World";
 let excerpt = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.`;
 let coverImage = `/assets/blog/hello-world/cover.jpg`;
 let date = new Date().toISOString();
-let FILE_PATH = `_posts/${slugify(date)}-${slugify(TITLE)}.md`;
+let FILE_PATH = `_posts/${date}-${slugify(TITLE)}.md`;
 let author = {
   name: "Tim Neutkens",
   picture: "/assets/blog/authors/tim.jpeg",
@@ -108,7 +108,7 @@ export const newpost = async (req, res) => {
   excerpt = data.excerpt.replace(/'/g, "&#39;");
   coverImage = data.coverImage;
   date = new Date().toISOString();
-  FILE_PATH = `_posts/${date}-${slugify(TITLE)}.md`;
+  FILE_PATH = `_posts/${slugify(date)}-${slugify(TITLE)}.md`;
   author.name = data?.author?.name?.replace(/'/g, "&#39;") || "Admin";
   author.picture =
     data?.author?.picture ||
@@ -146,16 +146,11 @@ ogImage:
 async function createFile(content) {
   const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`;
 
-  console.log(GITHUB_TOKEN);
-  console.log(url);
-
   const data = {
     message: "Add newpost.js",
     content: Buffer.from(content).toString("base64"),
     branch: "master", // Specify your branch
   };
-
-  console.log(data);
 
   try {
     const response = await fetch(url, {
