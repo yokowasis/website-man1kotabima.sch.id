@@ -60,7 +60,7 @@ export default function Post({ post, morePosts, preview, s }: Props) {
           </nav>
         </div>
       </div>
-      <div className="container pt-5">
+      <div className="container pt-5" id="post">
         <div className="row">
           <div className="col mb-3">
             Penulis : {post.author.name}, {post.date}
