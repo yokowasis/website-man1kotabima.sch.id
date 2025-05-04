@@ -43,7 +43,11 @@ export default function Index({ allPosts, s }: Props) {
                 <div className="courses-item d-flex flex-column bg-white overflow-hidden h-100">
                   <div className="text-center p-4 pt-0">
                     <h5 className="mb-3 mt-4">
-                      <a className="text-dark" href={`/posts/${post.slug}`}>
+                      <a
+                        className="text-dark"
+                        target={"_blank"}
+                        href={`/posts/${post.slug}`}
+                      >
                         {post.title}
                       </a>
                     </h5>
@@ -58,7 +62,11 @@ export default function Index({ allPosts, s }: Props) {
                   <div className="position-relative mt-auto">
                     <img className="img-fluid" src={post.coverImage} alt="" />
                     <div className="courses-overlay">
-                      <a className="btn btn-outline-primary border-2" href="">
+                      <a
+                        className="btn btn-outline-primary border-2"
+                        target="_blank"
+                        href={`/posts/${post.slug}`}
+                      >
                         Read More
                       </a>
                     </div>
