@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posting Baru</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css"
+      crossorigin="
+      anonymous"
+    />
+    <script
+      type="module"
+      src="https://pages-github.b-cdn.net/webcomponents/modules/cs-input.js"
+    ></script>
+  </head>
+
+  <body>
+    <cs-toast></cs-toast>
+    <div class="container pb-3">
+      <div class="row">
+        <div class="col">
+          <h1 class="text-center mb-3">Buat Postingan</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-4 row">
+            <div class="col-6">
+              <div class="card">
+                <div class="card-header bg-primary text-white">Wajib Diisi</div>
+                <div class="card-body">
+                  <cs-input type="text" id="title" label="Judul"></cs-input>
+                  <cs-input
+                    type="text"
+                    id="excerpt"
+                    label="Ringkasan"
+                  ></cs-input>
+                  <cs-upload
+                    type="upload"
+                    id="coverImage"
+                    label="Gambar Cover"
+                  ></cs-upload>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card">
+                <div class="card-header bg-success text-white">
+                  Informasi Tambahan
+                </div>
+                <div class="card-body">
+                  <cs-input
+                    type="text"
+                    id="author_name"
+                    label="Nama Penulis"
+                  ></cs-input>
+                  <cs-upload
+                    id="author_picture"
+                    label="Foto Penulis"
+                  ></cs-upload>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-center" style="font-size: 18px; font-weight: bold">
+            ISI POSTINGAN
+          </h3>
+          <cs-rtf id="postContent"></cs-rtf>
+          <button class="btn btn-primary" onclick="createPost()">Simpan</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const authorName = localStorage.getItem("authorName") || "";
+      const authorPicture = localStorage.getItem("authorPicture") || "";
+      const coverImage = localStorage.getItem("coverImage") || "";
+
+      setTimeout(() => {
+        setVal("author_name", authorName);
+        setVal("author_picture", authorPicture);
+        setVal("coverImage", coverImage);
+      }, 1000);
+
+      function createPost() {
+        const r = confirm(
+          "Apakah anda yakin dan sudah memeriksa ? Postingan ini tidak bisa dibatalkan.",
+        );
+        if (r !== true) {
+          return;
+        }
+
+        toast.hide();
+        toast.loading("Menyimpan...");
+
+        const title = getVal("title");
+        const authorName = getVal("author_name");
+        const authorPicture = getVal("author_picture");
+        const excerpt = getVal("excerpt");
+        const coverImage = getVal("coverImage");
+        const postContent = getVal("postContent");
+
+        localStorage.setItem("authorName", authorName);
+        localStorage.setItem("authorPicture", authorPicture);
+        localStorage.setItem("coverImage", coverImage);
+
+        const data = {
+          title,
+          author: {
+            name: authorName,
+            picture: authorPicture,
+          },
+          excerpt,
+          coverImage,
+          postContent,
+        };
+
+        fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data?.message === "Post berhasil dibuat") {
+              toast.hide();
+              toast.success(
+                "Post berhasil dibuat. Silakan menunggu sekitar 5 menit sampai post muncul di halaman utama. Jangan melakukan posting lagi untuk menghindari postingan duplikat.",
+                60000,
+              );
+            } else {
+              toast.error(
+                "Terjadi kesalahan. Pastikan sudah mengisi semua kolom yg wajib.",
+              );
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            toast.hide();
+            toast.error("Terjadi kesalahan");
+          });
+      }
+    </script>
+  </body>
+</html>
