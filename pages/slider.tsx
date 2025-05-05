@@ -44,7 +44,7 @@ const Slider = ({ s }: { s: Settings }) => {
                             PPDB
                           </a>
                           <a
-                            href="/pages/ksm"
+                            href="/pages/cetak-skl"
                             className="btn btn-success py-sm-3 px-sm-5 ms-3"
                           >
                             CETAK SKL
