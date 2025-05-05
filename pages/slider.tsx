@@ -37,24 +37,26 @@ const Slider = ({ s }: { s: Settings }) => {
                           <h1 className="display-2 text-light mb-5 animated slideInDown">
                             {item.text}
                           </h1>
-                          <a
-                            href="/pages/ppdb"
-                            className="btn btn-primary py-sm-3 px-sm-5"
-                          >
-                            PPDB
-                          </a>
-                          <a
-                            href="/pages/cetak-skl"
-                            className="btn btn-success py-sm-3 px-sm-5 ms-3"
-                          >
-                            CETAK SKL
-                          </a>
-                          <a
-                            href="/pages/ksm"
-                            className="btn btn-light py-sm-3 px-sm-5 ms-3"
-                          >
-                            PENDAFTARAN KSM
-                          </a>
+                          <div className="d-flex align-items-stretch justify-content-center flex-column flex-md-row gap-2 ">
+                            <a
+                              href="/pages/ppdb"
+                              className="btn px-4 py-2 btn-primary"
+                            >
+                              PPDB
+                            </a>
+                            <a
+                              href="/pages/cetak-skl"
+                              className="btn px-4 py-2 btn-success"
+                            >
+                              CETAK SKL
+                            </a>
+                            <a
+                              href="/pages/ksm"
+                              className="btn px-4 py-2 btn-light"
+                            >
+                              PENDAFTARAN KSM
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
