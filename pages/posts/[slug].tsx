@@ -74,7 +74,7 @@ export default function Post({ post, morePosts, preview, s }: Props) {
               <p style={{ fontWeight: "bold" }} className="m-0 text-success">
                 {post.author.name}
               </p>
-              <p className="m-0 text-primary">{post.date}</p>
+              <p className="m-0 text-danger">{post.date}</p>
             </div>
           </div>
         </div>

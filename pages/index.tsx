@@ -22,7 +22,7 @@ export default function Index({ allPosts, s }: Props) {
 
       <Slider s={s} />
 
-      <div className="container-xxl courses py-6 pb-0">
+      <div className="container-xxl courses py-5 pb-0">
         <div className="container">
           <div
             className="text-center mx-auto mb-5 wow fadeInUp"

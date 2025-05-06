@@ -92,7 +92,7 @@ const Slider = ({ s }: { s: Settings }) => {
         </div>
       </div>
 
-      <div className="container-fluid facts py-5 pt-lg-0">
+      <div className="container-fluid facts pt-5 pt-lg-0">
         <div className="container py-5 pt-lg-0">
           <div className="row gx-0">
             {s.Keunggulan.map((item, _) => {
