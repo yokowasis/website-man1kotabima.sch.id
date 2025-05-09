@@ -60,7 +60,16 @@ export default function Index({ allPosts, s }: Props) {
                     </ol>
                   </div>
                   <div className="position-relative mt-auto">
-                    <img className="img-fluid" src={post.coverImage} alt="" />
+                    <img
+                      style={{
+                        height: 300,
+                        width: "100%",
+                        objectFit: "cover",
+                      }}
+                      className="img-fluid object-fit-cover"
+                      src={post.coverImage}
+                      alt=""
+                    />
                     <div className="courses-overlay">
                       <a
                         className="btn btn-outline-primary border-2"
