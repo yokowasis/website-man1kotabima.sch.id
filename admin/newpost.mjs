@@ -7,7 +7,7 @@ dotenv.config();
  *
  * @param {string} text
  */
-function slugify(text) {
+export function slugify(text) {
   return text
     .toString()
     .toLowerCase()
@@ -43,7 +43,7 @@ async function uploadBlob(blob, filename) {
  * @param {string} imageUrl
  * @param {string} filename
  */
-async function processAndUploadImage(imageUrl, filename) {
+export async function processAndUploadImage(imageUrl, filename) {
   try {
     // Fetch the image from the CDN
     const response = await fetch(imageUrl);
@@ -142,9 +142,14 @@ ogImage:
 /**
  *
  * @param {string} content
+ * @param {string} file_path
  */
-async function createFile(content) {
-  const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`;
+export async function createFile(content, file_path = "") {
+  if (!file_path) {
+    file_path = FILE_PATH;
+  }
+
+  const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${file_path}`;
 
   const data = {
     message: "Add newpost.js",

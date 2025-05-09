@@ -10,6 +10,7 @@ import bodyParser from "body-parser";
 import { newpost } from "./admin/newpost.mjs";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
+import { newpostAI } from "./admin/ai.mjs";
 
 dotenv.config();
 
@@ -34,7 +35,14 @@ app.route("/").get((req, res) => {
   );
 });
 
+app.route("/ai").get((req, res) => {
+  res.sendFile(
+    path.join(dirname(fileURLToPath(import.meta.url)), "admin/ai.html"),
+  );
+});
+
 app.route("/").post(newpost);
+app.route("/ai").post(newpostAI);
 
 const httpServer = http.createServer(app);
 
