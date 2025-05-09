@@ -105,7 +105,7 @@ export const newpostAI = async (req, res) => {
     const metadata = `---
 title: '${TITLE}'
 excerpt: '${excerpt}'
-coverImage: '${coverImage}'
+coverImage: '${ogImage.url}'
 date: '${date}'
 author:
   name: ${author.name}
