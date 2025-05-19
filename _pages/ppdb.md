@@ -9,6 +9,7 @@ author:
 ## Penerimaan Peserta Didik Baru 2025/2026
 
 1. Pengisian formulir dapat dilakukan melalui halaman [FORMULIR PPDB](/pages/form-ppdb).
+2. Cetak Kartu dapat dilakukan melalui halaman [CETAK KARTU PPDB](/pages/cetak-kartu-ppdb).
 
 ## Info Jadwal
 
