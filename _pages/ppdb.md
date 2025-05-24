@@ -13,9 +13,10 @@ author:
 
 ## Info Jadwal
 
-1. Pendaftaran ditutup pada tanggal 25 Juni 2024.
-2. Jadwal Tes Jalur Reguler adalah tanggal 25-26 Juni 2025, Prestasi adalah tanggal 20-21 Februari 2025.
-3. Kelulusan akan dimumumkan pada tanggal 24 Februari 2025 untuk Jalur Prestasi dan 28 Juni 2025 untuk Jalur Reguler.
+1. Pendaftaran ditutup pada tanggal 25 Juni 2025.
+2. Jadwal Tes Wawancara Jalur Reguler adalah tanggal 26 mei-14 Juni 2025 (UNTUK INFORMASI TAMBAHAN PENDAFTARAN JALUR REGULER TETAP DI BUKA HINGGA TANGGAL 14 JUNI 2025
+DAN BAGI YG BARU MENDAFTAR SELANJUTNYA AKAN LANGSUNG DI TES KETIKA DATANG MENDAFTAR).
+3. Pengumuman Kelulusan jalur reguler dimumumkan pada tanggal 16 Juni 2025 untuk.
 
 ## Cek Kelulusan
 
@@ -23,7 +24,7 @@ author:
 
 ## Daftar Ulang
 
-Bagi yang dinyatakan lulus, silahkan melakukan daftar ulang pada tanggal 1-15 Maret 2025 untuk Jalur Prestasi dan 28 Juni - 5 Juli 2025 untuk Jalur Reguler.
+Bagi yang dinyatakan lulus jalur reguler, silahkan melakukan daftar ulang pada tanggal 16 Juni - 21 Juni 2025.
 
 ## Contact Person :
 
