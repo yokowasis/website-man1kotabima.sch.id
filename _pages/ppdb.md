@@ -13,8 +13,8 @@ author:
 
 ## Info Jadwal
 
-1. Pendaftaran ditutup pada tanggal 25 Juni 2025.
-2. Jadwal Tes Wawancara Jalur Reguler adalah tanggal 26 mei-14 Juni 2025 (UNTUK INFORMASI TAMBAHAN PENDAFTARAN JALUR REGULER TETAP DI BUKA HINGGA TANGGAL 14 JUNI 2025
+1. Pendaftaran ditutup pada tanggal 16 Juni 2025.
+2. Jadwal Tes Wawancara Jalur Reguler adalah tanggal 26 mei-16 Juni 2025 (UNTUK INFORMASI TAMBAHAN PENDAFTARAN JALUR REGULER TETAP DI BUKA HINGGA TANGGAL 16 JUNI 2025
 DAN BAGI YG BARU MENDAFTAR SELANJUTNYA AKAN LANGSUNG DI TES KETIKA DATANG MENDAFTAR).
 3. Pengumuman Kelulusan jalur reguler dimumumkan pada tanggal 16 Juni 2025 untuk.
 
