@@ -1,64 +1,162 @@
-# A statically generated blog example using Next.js, Markdown, and TypeScript
+# MAN 1 Kota Bima Website
 
-This is the existing [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) plus TypeScript.
+Official website for MAN 1 Kota Bima (Madrasah Aliyah Negeri 1 Kota Bima) built with Next.js and TypeScript.
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using Markdown files as the data source.
+## Features
 
-The blog posts are stored in `/_posts` as Markdown files with front matter support. Adding a new Markdown file in there will create a new blog post.
+- 📰 Dynamic blog/news system with markdown posts
+- 🏫 School information and administration
+- 👨‍🏫 Teacher profiles and staff directory
+- 📱 Responsive design with modern UI
+- ⚙️ Configurable settings through TypeScript
+- 🎨 Custom slider and image galleries
+- 📄 Static pages for school information
 
-To create the blog posts we use [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the Markdown files into an HTML string, and then send it down as a prop to the page. The metadata of every post is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter) and also sent in props to the page.
+## Tech Stack
 
-## Demo
+- **Framework**: Next.js 13+ with TypeScript
+- **Styling**: Tailwind CSS
+- **Content**: Markdown with gray-matter for frontmatter
+- **Image Processing**: Sharp for optimization
+- **Icons**: Font Awesome
+- **AI Integration**: OpenAI/DeepSeek for content processing
 
-[https://next-blog-starter.vercel.app/](https://next-blog-starter.vercel.app/)
+## Project Structure
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/blog-starter)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/blog-starter&project-name=blog-starter&repository-name=blog-starter)
-
-### Related examples
-
-- [WordPress](/examples/cms-wordpress)
-- [DatoCMS](/examples/cms-datocms)
-- [Sanity](/examples/cms-sanity)
-- [TakeShape](/examples/cms-takeshape)
-- [Prismic](/examples/cms-prismic)
-- [Contentful](/examples/cms-contentful)
-- [Strapi](/examples/cms-strapi)
-- [Agility CMS](/examples/cms-agilitycms)
-- [Cosmic](/examples/cms-cosmic)
-- [ButterCMS](/examples/cms-buttercms)
-- [Storyblok](/examples/cms-storyblok)
-- [GraphCMS](/examples/cms-graphcms)
-- [Kontent](/examples/cms-kontent)
-- [Umbraco Heartcore](/examples/cms-umbraco-heartcore)
-- [Builder.io](/examples/cms-builder-io)
-- [TinaCMS](/examples/cms-tina/)
-- [Enterspeed](/examples/cms-enterspeed)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example blog-starter blog-starter-app
+```
+├── _pages/                 # Static pages (markdown)
+├── _posts/                 # Blog posts (markdown)
+├── pages/                  # Next.js pages
+│   ├── admin/             # Admin interface
+│   ├── pages/             # Dynamic page routes
+│   └── posts/             # Blog post routes
+├── lib/                   # Utility functions
+├── interfaces/            # TypeScript interfaces
+├── public/                # Static assets
+└── settings.ts            # Site configuration
 ```
 
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- Yarn or npm
+
+### Installation
+
+1. Clone the repository
 ```bash
-yarn create next-app --example blog-starter blog-starter-app
+git clone <your-repo-url>
+cd website-man1kotabima.sch.id
 ```
 
+2. Install dependencies
 ```bash
-pnpm create next-app --example blog-starter blog-starter-app
+yarn install
+# or
+npm install
 ```
 
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+3. Run the development server
+```bash
+yarn dev
+# or
+npm run dev
+```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-# Notes
+### Available Scripts
 
-`blog-starter` uses [Tailwind CSS](https://tailwindcss.com) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3).
+- `yarn dev` - Start development server
+- `yarn build` - Build for production
+- `yarn start` - Start production server
+- `yarn typecheck` - Run TypeScript type checking
 
+## Configuration
+
+The site is configured through `settings.ts` which includes:
+
+- School information (name, logo, contact details)
+- Navigation menu structure
+- Teacher profiles
+- Slider content
+- Social media links
+- Quick links and popular resources
+
+## Content Management
+
+### Blog Posts
+
+Posts are stored in `_posts/` directory as markdown files with frontmatter:
+
+```markdown
+---
+title: "Post Title"
+excerpt: "Brief description"
+coverImage: "https://example.com/image.jpg"
+date: "2025-01-01T00:00:00.000Z"
+author:
+  name: "Author Name"
+  picture: "https://example.com/author.jpg"
+---
+
+Post content here...
+```
+
+### Static Pages
+
+Static pages are stored in `_pages/` directory and can be referenced in the navigation menu through `settings.ts`.
+
+## Admin Interface
+
+The admin interface is located at `/admin` and includes:
+
+- AI-powered content creation
+- URL-based post generation
+- Content management tools
+
+## Deployment
+
+### Build for Production
+
+```bash
+yarn build
+```
+
+### Deploy to Vercel
+
+The project is optimized for Vercel deployment:
+
+1. Connect your repository to Vercel
+2. Configure environment variables if needed
+3. Deploy automatically on push to main branch
+
+### Other Platforms
+
+For other platforms, ensure Node.js 18+ support and run:
+
+```bash
+yarn build
+yarn start
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run type checking: `yarn typecheck`
+5. Submit a pull request
+
+## License
+
+This project is private and belongs to MAN 1 Kota Bima.
+
+## Contact
+
+- **School**: MAN 1 Kota Bima
+- **Address**: Jln. Seruni No.06 Kota Bima
+- **Phone**: (0374) 42434
+- **Email**: info@man1kotabima.sch.id
