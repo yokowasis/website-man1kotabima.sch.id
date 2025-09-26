@@ -1,12 +1,6 @@
 ---
 title: "Visi Misi"
-coverImage: "/assets/blog/preview/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
-author:
-  name: Admin
-  picture: "/assets/blog/authors/joe.jpeg"
-ogImage:
-  url: "/assets/blog/preview/cover.jpg"
+layout: page
 ---
 
 # Visi
@@ -37,3 +31,6 @@ Visi di atas dapat dijabarkan menjadi beberapa indikator sebagai berikut :
 9. Memiliki keyakinan yang mantap dan teguh pendirian dalam menghadapi tantangan zaman.
 10. Meningkatkan kompetensi dan kinerja pendidik dan tenaga kependidikan.
 11. Menerapkan manajemen berbasis sekolah dan partisipatif dengan melibatkan semua warga sekolah, komite, dan stakeholders.
+
+<!-- RTF_CONTENT_SEPARATOR -->
+
