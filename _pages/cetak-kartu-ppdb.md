@@ -1,23 +1,17 @@
 ---
 title: "Cetak Kartu PPDB"
-date: "2023-01-01T00:00:00.000Z"
-author:
-  name: Admin
-  picture: "/assets/blog/authors/joe.jpeg"
+layout: page
 ---
 
-<script
-src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child"
-type="text/javascript"
-async
-></script>
+<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child" type="text/javascript" async></script>
 
-<div style="max-width:700px; margin:auto"> 
-<iframe style="width:100%" src="https://aplikasi.man1kotabima.sch.id/page/viewforms/view.php?id=26&fields=NIK;NISN" id="myIframe"></iframe>
+<div style="max-width:700px; margin:auto">
+  <iframe style="width:100%" src="https://aplikasi.man1kotabima.sch.id/page/viewforms/view.php?id=26&fields=NIK;NISN"
+    id="myIframe"></iframe>
 </div>
 
 <script>
-var iframe = document.getElementById('myIframe');
+  var iframe = document.getElementById('myIframe');
 window.addEventListener('message', function(event) {
   var data = event.data;
   if (data.messageType === 'setHeight') {
