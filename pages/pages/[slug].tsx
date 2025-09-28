@@ -61,11 +61,11 @@ export default function Post({ post, morePosts, preview, s }: Props) {
         </div>
       </div>
       <div className="container pt-5" id="post">
-         <div className="row">
-           <div className="col mb-3">
-             Penulis : {post.author?.name || "Admin"}, {post.date}
-           </div>
-         </div>
+        <div className="row">
+          <div className="col mb-3">
+            Penulis : {post.author?.name || "Admin"}, {post.date}
+          </div>
+        </div>
         <div className="row">
           <div
             className="col"
@@ -94,7 +94,10 @@ export async function getStaticProps({ params }: Params) {
     "ogImage",
     "coverImage",
   ]);
-  const content = await markdownToHtml(post.content || "");
+  const content = (await markdownToHtml(post.content || "")).replace(
+    "---SEPARATOR---",
+    "",
+  );
 
   return {
     props: {
