@@ -24,3 +24,5 @@ window.addEventListener('message', function(event) {
   }
 });
 </script>
+---SEPARATOR---
+<pre style="text-align: center;">Copyright MAN 1 Kota Bima 2025</pre>
