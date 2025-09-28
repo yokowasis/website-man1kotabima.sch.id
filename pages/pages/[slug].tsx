@@ -61,11 +61,11 @@ export default function Post({ post, morePosts, preview, s }: Props) {
         </div>
       </div>
       <div className="container pt-5" id="post">
-        <div className="row">
-          <div className="col mb-3">
-            Penulis : {post.author.name}, {post.date}
-          </div>
-        </div>
+         <div className="row">
+           <div className="col mb-3">
+             Penulis : {post.author?.name || "Admin"}, {post.date}
+           </div>
+         </div>
         <div className="row">
           <div
             className="col"
