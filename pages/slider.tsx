@@ -53,6 +53,9 @@ const Slider = ({ s }: { s: Settings }) => {
                             <a
                               href="/pages/cek-nilai-tka"
                               className="btn px-4 py-2 btn-primary"
+                              style={{
+                                background: "#0c2b4b",
+                              }}
                             >
                               CETAK TKA
                             </a>
