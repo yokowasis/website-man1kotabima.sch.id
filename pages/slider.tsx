@@ -51,6 +51,12 @@ const Slider = ({ s }: { s: Settings }) => {
                               CETAK SKL
                             </a>
                             <a
+                              href="/pages/cek-nilai-tka"
+                              className="btn px-4 py-2 btn-primary"
+                            >
+                              CETAK TKA
+                            </a>
+                            <a
                               href="/pages/ksm"
                               className="btn px-4 py-2 btn-light"
                             >
