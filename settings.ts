@@ -107,6 +107,9 @@ export const settings = {
       Struktur_Organisasi: "/pages/struktur-organisasi",
       Jadwal_Pelajaran: "/pages/jadwal-pelajaran",
     },
+    Assignment: {
+      English: "/pages/tugas/wasis",
+    },
     Contact: "/pages/contact",
   },
 
