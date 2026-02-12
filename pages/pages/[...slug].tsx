@@ -80,12 +80,14 @@ export default function Post({ post, morePosts, preview, s }: Props) {
 
 type Params = {
   params: {
-    slug: string;
+    slug: string[];
   };
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
+  // Join the slug array into a path (e.g., ["tugas", "wasis"] => "tugas/wasis")
+  const slugPath = params.slug.join("/");
+  const post = getPostBySlug(slugPath, [
     "title",
     "date",
     "slug",
@@ -115,9 +117,13 @@ export async function getStaticPaths() {
 
   return {
     paths: posts.map((post) => {
+      // Convert slug path to array (e.g., "tugas/wasis.md" => ["tugas", "wasis"])
+      const slugPath = post.slug.replace(/\.md$/, "");
+      const slugArray = slugPath.split("/");
+      
       return {
         params: {
-          slug: post.slug,
+          slug: slugArray,
         },
       };
     }),
