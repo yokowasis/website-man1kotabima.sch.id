@@ -1,12 +1,12 @@
 ---
-title: "PMBM"
+title: "PMBM (PENERIMAAN MURID BARU MADRASAH)"
 layout: page
 ---
 
 ## Penerimaan Murid Baru Madradah TA 2026/2027
 
-1. Pengisian formulir dapat dilakukan melalui halaman [FORMULIR PPDB](/pages/form-ppdb).
-2. Cetak Kartu dapat dilakukan melalui halaman [CETAK KARTU PPDB](/pages/cetak-kartu-ppdb).
+1. Pengisian formulir dapat dilakukan melalui halaman [FORMULIR PMBM](/pages/form-ppdb).
+2. Cetak Kartu dapat dilakukan melalui halaman [CETAK KARTU PMBM](/pages/cetak-kartu-ppdb).
 
 ## Info Jadwal
 
