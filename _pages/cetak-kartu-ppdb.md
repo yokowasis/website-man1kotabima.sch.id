@@ -1,5 +1,5 @@
 ---
-title: "Cetak Kartu PPDB"
+title: "Cetak Kartu PMBM (PENERIMAAN MURID BARU MADRASAH)"
 layout: page
 ---
 
@@ -25,4 +25,4 @@ window.addEventListener('message', function(event) {
 });
 </script>
 ---SEPARATOR---
-<pre style="text-align: center;">Copyright MAN 1 Kota Bima 2025</pre>
+<pre style="text-align: center;">Copyright MAN 1 Kota Bima 2026</pre>
