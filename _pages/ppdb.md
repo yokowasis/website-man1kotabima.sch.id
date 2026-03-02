@@ -19,10 +19,10 @@ layout: page
 
 ## Daftar Ulang
 
-Bagi yang dinyatakan lulus jalur reguler, silahkan melakukan daftar ulang pada tanggal 16 Juni - 21 Juni 2025.
+Bagi yang dinyatakan lulus jalur reguler, silahkan melakukan daftar ulang pada tanggal 2-15 april 2026.
 
 ## Contact Person :
 
 1. Marfuatun, S.Pd : 0823-4956-1226
-2. Usman, S.Pd : 0853-3305-9015
+2. Fidia Khairunnisa :082299478285
 3. Uswatun Hasanah, S.Pd: 0852-0570-7777
