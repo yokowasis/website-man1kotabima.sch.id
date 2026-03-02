@@ -1,9 +1,6 @@
 ---
-title: "Formulir PPDB"
-date: "2023-01-01T00:00:00.000Z"
-author:
-  name: Admin
-  picture: "/assets/blog/authors/joe.jpeg"
+title: "Formulir PMBM"
+layout: page
 ---
 
 <script
