@@ -1,20 +1,18 @@
 ---
-title: "PPDB"
+title: "PMBM"
 layout: page
 ---
 
-## Penerimaan Peserta Didik Baru 2025/2026
+## Penerimaan Murid Baru Madradah TA 2026/2027
 
 1. Pengisian formulir dapat dilakukan melalui halaman [FORMULIR PPDB](/pages/form-ppdb).
 2. Cetak Kartu dapat dilakukan melalui halaman [CETAK KARTU PPDB](/pages/cetak-kartu-ppdb).
 
 ## Info Jadwal
 
-1. Pendaftaran ditutup pada tanggal 16 Juni 2025.
-2. Jadwal Tes Wawancara Jalur Reguler adalah tanggal 26 mei-16 Juni 2025 (UNTUK INFORMASI TAMBAHAN PENDAFTARAN JALUR REGULER TETAP DI BUKA HINGGA TANGGAL 16 JUNI 2025
-DAN BAGI YG BARU MENDAFTAR SELANJUTNYA AKAN LANGSUNG DI TES KETIKA DATANG MENDAFTAR).
-3. Pengumuman Kelulusan jalur reguler dimumumkan pada tanggal 16 Juni 2025 untuk.
-
+1. Pendaftaran jalur prestasi tanggal 2 maret -21 Maret 2026.
+2. Jadwal Tes Wawancara dan tertulis Jalur Prestasi adalah tanggal 30-31 Maret 2026 (UNTUK INFORMASI TAMBAHAN PENDAFTARAN JALUR REGULER  DI BUKA DARI TANGGAL 2 MARET  HINGGA TANGGAL 15 APRIL  2026.
+3. Pengumuman KeluLusan tanggal 2 APRIL 2026
 ## Cek Kelulusan
 
 1. Cek Kelulusan dapat di akses melalui link : [CEK KELULUSAN](https://aplikasi.man1kotabima.sch.id/kelulusan)
