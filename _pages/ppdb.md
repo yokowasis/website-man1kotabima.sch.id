@@ -7,6 +7,7 @@ layout: page
 
 1. Pengisian formulir dapat dilakukan melalui halaman [FORMULIR PMBM](/pages/form-ppdb).
 2. Cetak Kartu dapat dilakukan melalui halaman [CETAK KARTU PMBM](/pages/cetak-kartu-ppdb).
+3. Untuk Kategori Jalur Prestasi bisa prestasi Akademik maupun non akademik serta pemberkasan untuk sertifikatnya dapat di bawa langsung pada saat tes 
 
 ## Info Jadwal
 
