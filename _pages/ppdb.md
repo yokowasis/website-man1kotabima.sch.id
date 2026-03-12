@@ -10,7 +10,7 @@ layout: page
 
 ## Info Jadwal
 
-1. Pendaftaran jalur prestasi tanggal 2 maret -21 Maret 2026.
+1. Pendaftaran jalur prestasi tanggal 2 maret -21 Maret 2026 dan Pemberkasan sertifikat jalur prestasi di bawa pada saat tes wawancara beserta berkas lainnya
 2. Jadwal Tes Wawancara dan tertulis Jalur Prestasi adalah tanggal 30-31 Maret 2026 (UNTUK INFORMASI TAMBAHAN PENDAFTARAN JALUR REGULER  DI BUKA DARI TANGGAL 2 MARET  HINGGA TANGGAL 15 APRIL  2026.
 3. Pengumuman KeluLusan tanggal 2 APRIL 2026
 ## Cek Kelulusan
