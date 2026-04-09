@@ -1,13 +1,13 @@
 ---
 title: "Manisnya Prestasi! 17 Siswa MAN 1 Kota Bima Tembus SNBP dan 41 Lolos SPAN-PTKIN 2026"
 excerpt: "Capaian nyata Mmembuktikan kualitas pendidikan dan pembinaan prestasi di MAN 1 Kota Bima yang terus meningkat dari tahun ke tahun."
-coverImage: ""
-date: "2026-04-09T05:59:19.499Z"
+coverImage: "https://cdnhost2.bimasoft.web.id/api/files/uploads/coverImage-1775721384499.jpg"
+date: "2026-04-09T07:56:35.762Z"
 author:
-  name: FIDIA KHAIRUNNISAH, M.Pd
+  name: Marfuatun
   picture: "https://avatars.githubusercontent.com/u/1374064?v=4"
 ogImage:
-  url: ""
+  url: "https://cdnhost2.bimasoft.web.id/api/files/uploads/coverImage-1775721384499.jpg"
 ---
 
 <p>Manisnya Prestasi! 17 Siswa MAN 1 Kota Bima Tembus SNBP dan 41 Lolos SPAN-PTKIN 2026<br>KOTA BIMA &ndash; Madrasah Aliyah Negeri (MAN) 1 Kota Bima kembali menorehkan prestasi gemilang di kancah nasional. Berdasarkan hasil pengumuman resmi jalur seleksi masuk perguruan tinggi tahun 2026, sebanyak 17 siswa dinyatakan lolos Seleksi Nasional Berdasarkan Prestasi (SNBP) dan 41 siswa berhasil menembus jalur Seleksi Prestasi Akademik Nasional Perguruan Tinggi Keagamaan Islam Negeri (SPAN-PTKIN).</p>
