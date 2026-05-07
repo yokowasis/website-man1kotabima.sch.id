@@ -2,8 +2,11 @@
 
 ## Project overview
 
-Next.js 13+ static site for MAN 1 Kota Bima (school website) + a separate Express admin server.  
-Deployed to **GitHub Pages** via CI. Content is markdown in-repo with gray-matter frontmatter.
+Next.js static site for MAN 1 Kota Bima (school website) + a separate Express admin server.  
+Deployed to **GitHub Pages** via CI.
+
+Content is now served from **Pocketbase** (`sekolah-backend.sg2.app.web.id`) via client-side JS.  
+The build-time data helpers (`lib/api.ts`, `lib/apiPages.ts`) read local markdown only for `getStaticPaths` slug resolution. Real data is fetched from Pocketbase at runtime in the browser.
 
 ## Package manager
 
@@ -19,92 +22,103 @@ pnpm typecheck  # tsc --noEmit (strict mode is OFF in tsconfig)
 
 ## Key architecture
 
-- **Next.js app** — `pages/` (Pages Router, not App Router), `_posts/` (blog), `_pages/` (static pages)
+- **Pages Router** — NOT App Router. All pages in `pages/`.
+- **Layout components** now live in `components/` (header.tsx, footer.tsx, slider.tsx), moved from `pages/` to avoid accidental page routes.
 - **Express admin server** — `admin.mjs` + `admin/` (port 3001). Run separately: `node admin.mjs`
-- **No `components/` dir** — layout components live directly in `pages/` (header.tsx, footer.tsx, slider.tsx)
-- **No tests** exist in the repo
+- **No tests** (except the e2e test script which is removed after use)
+
+## Data flow (Pocketbase)
+
+| Layer | Location | Purpose |
+|---|---|---|
+| Client helper | `lib/db.ts` | Unauthenticated PocketBase client for browser use |
+| Typed collections | `lib/pocketbase-types.ts` | Auto-generated from Pocketbase schema via `pnpm gen` |
+| CRUD tables | `lib/tables/*.ts` | Following pattern in `lib/tables/users.ts` |
+| Build-time slugs | `lib/api.ts`, `lib/apiPages.ts` | Read local `_posts/` and `_pages/` dirs for `getStaticPaths` |
+
+**Client-side data loading pattern** (every page):
+
+```
+useEffect → Promise.all([DataSettings.loadAll(), DataPosts.bySlug(slug)])
+           → setS(settings), setPost(record)
+           → render Header/Footer/content once both are ready
+```
+
+Key points:
+- `DataSettings.loadAll()` fetches school_settings, menus, teachers, sliders, etc. from Pocketbase (takes ~1-2s).
+- Pages show a loading spinner until ALL data is ready.
+- If fetch fails, show a Next.js error page (404).
+- All Pocketbase content collections are publicly readable (listRule="", viewRule="").
+
+## Pocketbase server
+
+| Property | Value |
+|---|---|
+| URL | `https://sekolah-backend.sg2.app.web.id` |
+| Admin email | `yokowasis@gmail.com` |
+| Admin password | `6BS5qXPxRH8eZf` (in package.json `gen` script) |
+| Tenant ID | `ie9a1spnndt3fl4` |
+| Collections | posts, pages, school_settings, menus, teachers, slider_items, events, keunggulan, quick_popular_links |
+
+To regenerate types after schema changes:
+```bash
+pnpm gen   # runs pocketbase-typegen against the live server
+```
+
+## Content management
+
+**Source of truth is Pocketbase.** The local `_posts/` and `_pages/` markdown files exist for:
+1. Build-time `getStaticPaths` slug resolution (Next.js needs all paths at build time for static export)
+2. Historical reference
+
+**Post creation flow** (admin tools):
+1. Express server (`admin.mjs`) receives POST → commits a `.md` file to master via GitHub API (`GITHUB_TOKEN`), AND the data is also in Pocketbase
+2. AI-based post creation uses **DeepSeek** (not OpenAI) — hardcoded API key `sk-cb7c980a8635419abd5bb7853294e110` in source
+3. URL crawling via `crawl4ai.b.app.web.id` service
+4. Images uploaded to CDN (`cdnhost2.bimasoft.web.id`)
+5. After posting, wait ~5 min for CI to rebuild and deploy
 
 ## Next.js configuration (quirks)
 
 | Setting | Value | Why |
 |---|---|---|
 | `output` | `"export"` | Static export for GitHub Pages |
-| `images.unoptimized` | `true` | Required for static export (no Next.js image optimizer) |
+| `images.unoptimized` | `true` | Required for static export |
 | `strict` (tsconfig) | `false` | TypeScript strict mode is disabled |
 
-## Content management
+## Seeding Pocketbase
 
-Blog posts live in `_posts/` as `.md` files with gray-matter frontmatter:
-```yaml
----
-title: "..."
-excerpt: "..."
-coverImage: "..."
-date: "2025-01-01T00:00:00.000Z"
-author:
-  name: "..."
-  picture: "..."
-ogImage:
-  url: "..."
----
+Run `node seed.mjs` to repopulate Pocketbase from the local markdown files and `settings.ts`.
+
+```bash
+node seed.mjs   # clears + reseeds all collections
 ```
-
-Static pages live in `_pages/` (including nested dirs like `tugas/`).  
-The `_pages/SCHEMA.md` describes a **planned** Pocketbase migration — not implemented yet.
-
-**Post creation flow** (admin tools):
-1. Express server (`admin.mjs`) receives POST → commits the `.md` file to the **master branch** directly via GitHub API (uses `GITHUB_TOKEN` env var)
-2. AI-based post creation uses **DeepSeek** (not OpenAI) — hardcoded API key `sk-cb7c980a8635419abd5bb7853294e110` in source
-3. URL crawling via `crawl4ai.b.app.web.id` service
-4. Images uploaded to a separate CDN (`cdnhost2.bimasoft.web.id`)
-5. After posting, wait ~5 min for CI to rebuild and deploy
 
 ## CI/CD (GitHub Actions)
 
 File: `.github/workflows/nextjs.yml`  
-Triggers: push to `master` branch
-
-```yaml
-steps:
-  - pnpm install (v8)
-  - npx run build
-  - upload ./out/ as pages artifact
-  - deploy to GitHub Pages
-```
-
-Node version: 22. The CI uses pnpm 8.
+Triggers: push to `master` branch. Node 22, pnpm 8.
 
 ## Admin server
 
-Two admin interfaces exist — they are **different tools**:
-
-1. **Express server** (`admin.mjs`, `admin/index.html`, `admin/ai.html`) — traditional HTML forms for creating posts. Runs on port 3001. Requires `GITHUB_TOKEN`, optional `PORTSSL`, `privkey`, `certificate` env vars.
-2. **Next.js admin page** (`pages/admin/index.tsx`) — client-side AI post generator using DeepSeek. Accessible at `/admin` on the Next.js dev server.
+1. **Express server** (`admin.mjs`, port 3001) — HTML forms that create posts by committing markdown to GitHub. Requires `GITHUB_TOKEN`.
+2. **Next.js admin page** (`/admin`) — client-side AI post generator using DeepSeek.
 
 ## Environment variables
 
 - `GITHUB_TOKEN` — required by Express admin to commit posts to GitHub
 - `PORT` — Express admin port (default 3001)
 - `PORTSSL`, `privkey`, `certificate` — optional HTTPS for admin server
-- No `.env.example` exists; create `.env` locally as needed
 
 ## TypeScript notes
 
-- `strict: false` in tsconfig — unsafe casts and implicit `any` will not error
+- `strict: false` — unsafe casts and implicit `any` will not error.
 - `skipLibCheck: true`
-- `@types/remark-html.d.ts` is a stub: `declare module 'remark-html'`
-- `zod` in devDependencies is used by `admin/ai.mjs` for formatting but unused elsewhere
-
-## Style and formatting
-
-- Tailwind CSS v3 with custom config in `tailwind.config.js`
-- CSS assets in `public/assets-driving/` (bundled from a template) — do not edit these
-- PostCSS with `tailwindcss` + `autoprefixer` plugins
+- `zod` in devDependencies is used by `admin/ai.mjs` but unused elsewhere.
 
 ## State of the repo
 
-- Single branch: `master` (no `main` branch)
-- Commit messages are in Indonesian/English mixed, often generic ("Update page")
-- No linter or formatter config (no eslint, prettier, husky, etc.)
-- No tests
-- Next.js Pages Router (not App Router)
+- Single branch: `master` (no `main`).
+- Commit messages are Indonesian/English mixed, often generic ("Update page").
+- No linter/formatter config (no eslint, prettier, husky).
+- No test framework installed.

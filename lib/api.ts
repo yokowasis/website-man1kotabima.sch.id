@@ -1,6 +1,10 @@
+/**
+ * Build-time API helper for getStaticPaths.
+ * Reads slugs from local _posts directory (still available at build time).
+ * Content is fetched client-side from Pocketbase at runtime.
+ */
 import fs from "fs";
 import { join } from "path";
-import matter from "gray-matter";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -12,26 +16,19 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
 
-  type Items = {
-    [key: string]: string;
-  };
-
+  type Items = { [key: string]: string };
   const items: Items = {};
 
-  // Ensure only the minimal needed data is exposed
+  // Return only the slug for client-side fetching
   fields.forEach((field) => {
     if (field === "slug") {
       items[field] = realSlug;
     }
     if (field === "content") {
-      items[field] = content;
+      items[field] = ""; // content loaded client-side
     }
-
-    if (typeof data[field] !== "undefined") {
-      items[field] = data[field];
-    }
+    // For other fields, return empty - data is fetched client-side
   });
 
   return items;
@@ -39,9 +36,5 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+  return slugs.map((slug) => getPostBySlug(slug, fields));
 }

@@ -1,4 +1,4 @@
-import { Settings, settings } from "../settings";
+import type { Settings } from "../settings";
 
 const Header = (props: { s: Settings }) => {
   return (
@@ -127,12 +127,6 @@ const Header = (props: { s: Settings }) => {
       </nav>
     </>
   );
-};
-
-export const getStaticProps = async () => {
-  return {
-    props: { s: settings },
-  };
 };
 
 export default Header;

@@ -1,17 +1,50 @@
 import { getAllPosts } from "../lib/api";
-import Post from "../interfaces/post";
+import type Post from "../interfaces/post";
 import Head from "next/head";
-import { Settings, settings } from "../settings";
-import Header from "./header";
-import Footer from "./footer";
-import Slider from "./slider";
+import type { Settings } from "../settings";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import Slider from "../components/slider";
+import { useEffect, useState } from "react";
+import { DataSettings } from "../lib/tables/settings";
 
 type Props = {
-  allPosts: Post[];
-  s: Settings;
+  slugs: string[];
 };
 
-export default function Index({ allPosts, s }: Props) {
+export default function Index({ slugs: _slugs }: Props) {
+  const [s, setS] = useState<Settings | null>(null);
+  const [allPosts, setAllPosts] = useState<any[]>([]);
+
+  useEffect(() => {
+    // Fetch settings on client side
+    DataSettings.loadAll().then(setS).catch(console.error);
+
+    // Fetch posts on client side
+    import("../lib/tables/posts").then(({ DataPosts }) => {
+      DataPosts.all().then((records: any[]) => {
+        setAllPosts(records.map((post) => ({
+          slug: post.slug,
+          title: post.title,
+          date: post.date || post.created,
+          author: { name: post.author_name || "Admin", picture: post.author_picture || "" },
+          coverImage: post.cover_image || "",
+          excerpt: post.excerpt || "",
+        })));
+      }).catch(console.error);
+    }).catch(console.error);
+  }, []);
+
+  if (!s) {
+    return (
+      <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
+        <div className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -38,7 +71,7 @@ export default function Index({ allPosts, s }: Props) {
             <h1 className="display-6 mb-4">Berita Terbaru Saat Ini</h1>
           </div>
           <div className="row g-4 justify-content-center">
-            {allPosts.map((post, i) => (
+            {allPosts.map((post: any, i: number) => (
               <div key={i} className="col-lg-4 col-md-6 wow fadeInUp">
                 <div className="courses-item d-flex flex-column bg-white overflow-hidden h-100">
                   <div className="text-center p-4 pt-0">
@@ -163,7 +196,7 @@ export default function Index({ allPosts, s }: Props) {
             </h1>
           </div>
           <div className="row g-0 team-items">
-            {s.Guru.map((g, i) => (
+            {s.Guru.map((g: any, i: number) => (
               <div
                 key={i}
                 className="col-lg-3 col-md-6 wow fadeInUp"
@@ -220,18 +253,8 @@ export default function Index({ allPosts, s }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
-
-  settings.InfoSekolah.Title = `Website Resmi ${settings.InfoSekolah.Nama}`;
-
+  const slugs = getAllPosts(["slug"]).map((p) => p.slug);
   return {
-    props: { allPosts, s: settings },
+    props: { slugs },
   };
 };

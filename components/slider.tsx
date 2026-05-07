@@ -1,4 +1,4 @@
-import { Settings, settings } from "../settings";
+import type { Settings } from "../settings";
 
 const Slider = ({ s }: { s: Settings }) => {
   return (
@@ -137,12 +137,6 @@ const Slider = ({ s }: { s: Settings }) => {
       </div>
     </>
   );
-};
-
-export const getStaticProps = async () => {
-  return {
-    props: { s: settings },
-  };
 };
 
 export default Slider;
