@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AdminLayout from "../../../components/adminlayout";
 import { adminSidebar } from "../../../lib/admin-sidebar";
+import { DataPages } from "../../../lib/tables/pages";
 import { DataSliderItems } from "../../../lib/tables/slider_items";
 import { DataKeunggulan } from "../../../lib/tables/keunggulan";
 import { DataTeachers } from "../../../lib/tables/teachers";
@@ -17,10 +18,11 @@ export default function SettingsPage() {
   const [menusData, setMenusData] = useState<any[]>([]);
   const [eventsData, setEventsData] = useState<any[]>([]);
   const [linksData, setLinksData] = useState<any[]>([]);
+  const [pagesData, setPagesData] = useState<any[]>([]);
   const [schoolSettings, setSchoolSettings] = useState<any>(null);
 
   const loadAll = async () => {
-    const [slider, keunggulan, teachers, menus, events, links, school] =
+    const [slider, keunggulan, teachers, menus, events, links, pages, school] =
       await Promise.all([
         DataSliderItems.all(),
         DataKeunggulan.all(),
@@ -28,6 +30,7 @@ export default function SettingsPage() {
         DataMenus.all(),
         DataEvents.all(),
         DataQuickPopularLinks.all(),
+        DataPages.all(),
         DataSchoolSettings.first(),
       ]);
     setSliderData(slider);
@@ -36,6 +39,7 @@ export default function SettingsPage() {
     setMenusData(menus);
     setEventsData(events);
     setLinksData(links);
+    setPagesData(pages);
     setSchoolSettings(school);
     setLoading(false);
   };
@@ -168,18 +172,69 @@ export default function SettingsPage() {
       await customElements.whenDefined("cs-data-table");
       const table = document.getElementById("menus-table") as any;
       if (!table) return;
+
+      // Build URL select options from pages + existing custom URLs
+      const pageUrlOptions = (pagesData || []).map((p: any) => ({
+        label: `${p.title || "Untitled"} (/pages/${p.slug})`,
+        value: `/pages/${p.slug}`,
+      }));
+      const existingCustomUrls: string[] = [];
+      (menusData || []).forEach((m: any) => {
+        if (m.url && !m.url.startsWith("/pages/") && !pageUrlOptions.some((o) => o.value === m.url)) {
+          if (!existingCustomUrls.includes(m.url)) existingCustomUrls.push(m.url);
+        }
+      });
+      const customUrlOptions = existingCustomUrls.map((url: string) => ({
+        label: `External: ${url}`,
+        value: url,
+      }));
+      const allUrlOptions = [
+        { label: "-- Select a page or external URL --", value: "" },
+        ...pageUrlOptions,
+        ...customUrlOptions,
+      ];
+
+      // Build parent select options from existing menus
+      const parentOptions = (menusData || []).map((m: any) => ({
+        label: m.name || "Unnamed",
+        value: m.id,
+      }));
+      const allParentOptions = [
+        { label: "No parent (top-level)", value: "" },
+        ...parentOptions,
+      ];
+
       table.columns = [
         { key: "id", title: "ID", readonly: true, hidden: true },
         { key: "name", title: "Name", type: "text" },
-        { key: "url", title: "URL", type: "text", placeholder: "/page-url or https://..." },
-        { key: "parent", title: "Parent ID", type: "text", placeholder: "Leave empty for top-level menu" },
+        {
+          key: "url",
+          title: "URL",
+          type: "select",
+          data: allUrlOptions.map((o) => o.label),
+          dataValue: allUrlOptions.map((o) => o.value),
+          note: "Choose a page, or pick an existing external URL. To add a new external URL, use Pocketbase admin.",
+        },
+        {
+          key: "parent",
+          title: "Parent",
+          type: "select",
+          data: allParentOptions.map((o) => o.label),
+          dataValue: allParentOptions.map((o) => o.value),
+          renderer: (value: string) => {
+            if (!value) return '<em style="color:var(--muted-foreground,#888)">Top-level</em>';
+            const parent = parentOptions.find((o) => o.value === value);
+            return parent?.label || value;
+          },
+          note: "Choose a parent menu for this item.",
+        },
       ];
       table.data = menusData;
       table.onAdd = async (p: any) => {
         try {
           const r = await DataMenus.create({
             name: p.name,
-            url: p.url,
+            url: p.url || undefined,
             parent: p.parent || undefined,
           });
           await loadAll();
@@ -191,7 +246,7 @@ export default function SettingsPage() {
         try {
           await DataMenus.update(prev.id, {
             name: p.name,
-            url: p.url,
+            url: p.url || undefined,
             parent: p.parent || undefined,
           });
           await loadAll();
@@ -298,7 +353,7 @@ export default function SettingsPage() {
     setupMenus();
     setupEvents();
     setupLinks();
-  }, [loading, sliderData, keunggulanData, teachersData, menusData, eventsData, linksData]);
+  }, [loading, sliderData, keunggulanData, teachersData, menusData, eventsData, linksData, pagesData]);
 
   if (loading) {
     return (
