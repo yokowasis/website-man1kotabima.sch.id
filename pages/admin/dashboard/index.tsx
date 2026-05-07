@@ -1,18 +1,19 @@
+import AdminLayout from "../../../components/adminlayout";
+
 const Component = (props) => {
   return (
-    <div>
-      <p>Hello World</p>
+    <AdminLayout>
+      <p>Example Input</p>
       <cs-input
         id="someID"
         type="text"
         theme="mui"
-        placeholder=""
-        label=""
+        label="Hello"
         value=""
+        icon="cancel"
         note=""
-        mode="dark"
       ></cs-input>
-    </div>
+    </AdminLayout>
   );
 };
 
