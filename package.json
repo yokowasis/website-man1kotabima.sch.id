@@ -4,7 +4,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "gen": "npx pocketbase-typegen --url https://sekolah-backend.sg2.app.web.id --email yokowasis@gmail.com --password 6BS5qXPxRH8eZf -o ./lib/pocketbase-types.ts"
   },
   "dependencies": {
     "body-parser": "^2.2.0",
