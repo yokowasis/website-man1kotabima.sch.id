@@ -58,33 +58,55 @@ export default function SettingsPage() {
       if (!table) return;
       table.columns = [
         { key: "id", title: "ID", readonly: true, hidden: true },
-        { key: "image", title: "Image URL", type: "upload" },
-        { key: "text", title: "Text", type: "text", placeholder: "Slide caption" },
+        {
+          key: "image",
+          title: "Image URL",
+          type: "upload",
+          renderer: (value: string) =>
+            value
+              ? `<a href="${value}" target="_blank" rel="noopener noreferrer">Link</a>`
+              : "",
+        },
+        {
+          key: "text",
+          title: "Text",
+          type: "text",
+          placeholder: "Slide caption",
+        },
       ];
       table.data = sliderData;
       table.onAdd = async (p: any) => {
         try {
           const r = await DataSliderItems.create(p);
           await loadAll();
-          (window as any).toast?.success?.("Slider item added");
+          toast?.success?.("Slider item added");
           return { ...p, id: r.id };
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onEdit = async (p: any, prev: any) => {
         try {
           await DataSliderItems.update(prev.id, p);
           await loadAll();
-          (window as any).toast?.success?.("Slider item updated");
+          toast?.success?.("Slider item updated");
           return p;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onDelete = async (row: any) => {
         try {
           await DataSliderItems.delete(row.id);
           await loadAll();
-          (window as any).toast?.success?.("Slider item deleted");
+          toast?.success?.("Slider item deleted");
           return true;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
     };
 
@@ -104,25 +126,34 @@ export default function SettingsPage() {
         try {
           const r = await DataKeunggulan.create(p);
           await loadAll();
-          (window as any).toast?.success?.("Keunggulan added");
+          toast?.success?.("Keunggulan added");
           return { ...p, id: r.id };
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onEdit = async (p: any, prev: any) => {
         try {
           await DataKeunggulan.update(prev.id, p);
           await loadAll();
-          (window as any).toast?.success?.("Keunggulan updated");
+          toast?.success?.("Keunggulan updated");
           return p;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onDelete = async (row: any) => {
         try {
           await DataKeunggulan.delete(row.id);
           await loadAll();
-          (window as any).toast?.success?.("Keunggulan deleted");
+          toast?.success?.("Keunggulan deleted");
           return true;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
     };
 
@@ -134,7 +165,15 @@ export default function SettingsPage() {
       table.columns = [
         { key: "id", title: "ID", readonly: true, hidden: true },
         { key: "nama", title: "Name", type: "text" },
-        { key: "foto", title: "Photo URL", type: "upload" },
+        {
+          key: "foto",
+          title: "Photo URL",
+          type: "upload",
+          renderer: (value: string) =>
+            value
+              ? `<a href="${value}" target="_blank" rel="noopener noreferrer">Foto</a>`
+              : "",
+        },
         { key: "mapel", title: "Subject", type: "text" },
         { key: "facebook", title: "Facebook", type: "text" },
         { key: "twitter", title: "Twitter", type: "text" },
@@ -145,25 +184,34 @@ export default function SettingsPage() {
         try {
           const r = await DataTeachers.create(p);
           await loadAll();
-          (window as any).toast?.success?.("Teacher added");
+          toast?.success?.("Teacher added");
           return { ...p, id: r.id };
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onEdit = async (p: any, prev: any) => {
         try {
           await DataTeachers.update(prev.id, p);
           await loadAll();
-          (window as any).toast?.success?.("Teacher updated");
+          toast?.success?.("Teacher updated");
           return p;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onDelete = async (row: any) => {
         try {
           await DataTeachers.delete(row.id);
           await loadAll();
-          (window as any).toast?.success?.("Teacher deleted");
+          toast?.success?.("Teacher deleted");
           return true;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
     };
 
@@ -180,8 +228,13 @@ export default function SettingsPage() {
       }));
       const existingCustomUrls: string[] = [];
       (menusData || []).forEach((m: any) => {
-        if (m.url && !m.url.startsWith("/pages/") && !pageUrlOptions.some((o) => o.value === m.url)) {
-          if (!existingCustomUrls.includes(m.url)) existingCustomUrls.push(m.url);
+        if (
+          m.url &&
+          !m.url.startsWith("/pages/") &&
+          !pageUrlOptions.some((o) => o.value === m.url)
+        ) {
+          if (!existingCustomUrls.includes(m.url))
+            existingCustomUrls.push(m.url);
         }
       });
       const customUrlOptions = existingCustomUrls.map((url: string) => ({
@@ -222,7 +275,8 @@ export default function SettingsPage() {
           data: allParentOptions.map((o) => o.label),
           dataValue: allParentOptions.map((o) => o.value),
           renderer: (value: string) => {
-            if (!value) return '<em style="color:var(--muted-foreground,#888)">Top-level</em>';
+            if (!value)
+              return '<em style="color:var(--muted-foreground,#888)">Top-level</em>';
             const parent = parentOptions.find((o) => o.value === value);
             return parent?.label || value;
           },
@@ -238,9 +292,12 @@ export default function SettingsPage() {
             parent: p.parent || undefined,
           });
           await loadAll();
-          (window as any).toast?.success?.("Menu added");
+          toast?.success?.("Menu added");
           return { ...p, id: r.id };
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onEdit = async (p: any, prev: any) => {
         try {
@@ -250,17 +307,23 @@ export default function SettingsPage() {
             parent: p.parent || undefined,
           });
           await loadAll();
-          (window as any).toast?.success?.("Menu updated");
+          toast?.success?.("Menu updated");
           return p;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onDelete = async (row: any) => {
         try {
           await DataMenus.delete(row.id);
           await loadAll();
-          (window as any).toast?.success?.("Menu deleted");
+          toast?.success?.("Menu deleted");
           return true;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
     };
 
@@ -273,33 +336,58 @@ export default function SettingsPage() {
         { key: "id", title: "ID", readonly: true, hidden: true },
         { key: "title", title: "Title", type: "text" },
         { key: "text", title: "Description", type: "text" },
-        { key: "image", title: "Image URL", type: "upload" },
-        { key: "link", title: "Link", type: "text" },
+        {
+          key: "image",
+          title: "Image URL",
+          type: "upload",
+          renderer: (value: string) =>
+            value
+              ? `<a href="${value}" target="_blank" rel="noopener noreferrer">Link</a>`
+              : "",
+        },
+        {
+          key: "link",
+          title: "Link",
+          type: "text",
+          renderer: (value: string) =>
+            value
+              ? `<a href="${value}" target="_blank" rel="noopener noreferrer">${value}</a>`
+              : "",
+        },
       ];
       table.data = eventsData;
       table.onAdd = async (p: any) => {
         try {
           const r = await DataEvents.create(p);
           await loadAll();
-          (window as any).toast?.success?.("Event added");
+          toast?.success?.("Event added");
           return { ...p, id: r.id };
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onEdit = async (p: any, prev: any) => {
         try {
           await DataEvents.update(prev.id, p);
           await loadAll();
-          (window as any).toast?.success?.("Event updated");
+          toast?.success?.("Event updated");
           return p;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onDelete = async (row: any) => {
         try {
           await DataEvents.delete(row.id);
           await loadAll();
-          (window as any).toast?.success?.("Event deleted");
+          toast?.success?.("Event deleted");
           return true;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
     };
 
@@ -311,7 +399,15 @@ export default function SettingsPage() {
       table.columns = [
         { key: "id", title: "ID", readonly: true, hidden: true },
         { key: "name", title: "Name", type: "text" },
-        { key: "url", title: "URL", type: "text" },
+        {
+          key: "url",
+          title: "URL",
+          type: "text",
+          renderer: (value: string) =>
+            value
+              ? `<a href="${value}" target="_blank" rel="noopener noreferrer">${value}</a>`
+              : "",
+        },
         {
           key: "type",
           title: "Type",
@@ -325,25 +421,34 @@ export default function SettingsPage() {
         try {
           const r = await DataQuickPopularLinks.create(p);
           await loadAll();
-          (window as any).toast?.success?.("Link added");
+          toast?.success?.("Link added");
           return { ...p, id: r.id };
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onEdit = async (p: any, prev: any) => {
         try {
           await DataQuickPopularLinks.update(prev.id, p);
           await loadAll();
-          (window as any).toast?.success?.("Link updated");
+          toast?.success?.("Link updated");
           return p;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
       table.onDelete = async (row: any) => {
         try {
           await DataQuickPopularLinks.delete(row.id);
           await loadAll();
-          (window as any).toast?.success?.("Link deleted");
+          toast?.success?.("Link deleted");
           return true;
-        } catch (e: any) { (window as any).toast?.error?.(e.message); return false; }
+        } catch (e: any) {
+          toast?.error?.(e.message);
+          return false;
+        }
       };
     };
 
@@ -353,7 +458,16 @@ export default function SettingsPage() {
     setupMenus();
     setupEvents();
     setupLinks();
-  }, [loading, sliderData, keunggulanData, teachersData, menusData, eventsData, linksData, pagesData]);
+  }, [
+    loading,
+    sliderData,
+    keunggulanData,
+    teachersData,
+    menusData,
+    eventsData,
+    linksData,
+    pagesData,
+  ]);
 
   if (loading) {
     return (
@@ -378,7 +492,12 @@ export default function SettingsPage() {
       activePath="/admin/settings"
     >
       <h1>Settings</h1>
-      <p style={{ color: "var(--muted-foreground, #71717a)", marginBottom: "1.5rem" }}>
+      <p
+        style={{
+          color: "var(--muted-foreground, #71717a)",
+          marginBottom: "1.5rem",
+        }}
+      >
         Manage your website content and configuration
       </p>
 
@@ -386,17 +505,39 @@ export default function SettingsPage() {
       <div className="settings-section">
         <h3>School Settings</h3>
         {schoolSettings ? (
-          <div style={{ padding: "1rem", border: "1px solid var(--border, #e4e4e7)", borderRadius: "0.5rem" }}>
-            <p><strong>School Name:</strong> {schoolSettings.nama_sekolah || "—"}</p>
-            <p><strong>Phone:</strong> {schoolSettings.telepon || "—"}</p>
-            <p><strong>Email:</strong> {schoolSettings.email || "—"}</p>
-            <p><strong>Address:</strong> {schoolSettings.alamat || "—"}</p>
-            <p style={{ color: "var(--muted-foreground, #71717a)", fontSize: "0.85rem", marginTop: "0.5rem" }}>
+          <div
+            style={{
+              padding: "1rem",
+              border: "1px solid var(--border, #e4e4e7)",
+              borderRadius: "0.5rem",
+            }}
+          >
+            <p>
+              <strong>School Name:</strong> {schoolSettings.nama_sekolah || "—"}
+            </p>
+            <p>
+              <strong>Phone:</strong> {schoolSettings.telepon || "—"}
+            </p>
+            <p>
+              <strong>Email:</strong> {schoolSettings.email || "—"}
+            </p>
+            <p>
+              <strong>Address:</strong> {schoolSettings.alamat || "—"}
+            </p>
+            <p
+              style={{
+                color: "var(--muted-foreground, #71717a)",
+                fontSize: "0.85rem",
+                marginTop: "0.5rem",
+              }}
+            >
               Edit school settings directly in Pocketbase admin panel.
             </p>
           </div>
         ) : (
-          <p style={{ color: "var(--muted-foreground, #71717a)" }}>No school settings configured.</p>
+          <p style={{ color: "var(--muted-foreground, #71717a)" }}>
+            No school settings configured.
+          </p>
         )}
       </div>
 
