@@ -7,6 +7,7 @@ import Footer from "../components/footer";
 import Slider from "../components/slider";
 import { useEffect, useState } from "react";
 import { DataSettings } from "../lib/tables/settings";
+import Script from "next/script";
 
 type Props = {
   slugs: string[];
@@ -21,23 +22,35 @@ export default function Index({ slugs: _slugs }: Props) {
     DataSettings.loadAll().then(setS).catch(console.error);
 
     // Fetch posts on client side
-    import("../lib/tables/posts").then(({ DataPosts }) => {
-      DataPosts.all().then((records: any[]) => {
-        setAllPosts(records.map((post) => ({
-          slug: post.slug,
-          title: post.title,
-          date: post.date || post.created,
-          author: { name: post.author_name || "Admin", picture: post.author_picture || "" },
-          coverImage: post.cover_image || "",
-          excerpt: post.excerpt || "",
-        })));
-      }).catch(console.error);
-    }).catch(console.error);
+    import("../lib/tables/posts.js")
+      .then(({ DataPosts }) => {
+        DataPosts.all()
+          .then((records: any[]) => {
+            setAllPosts(
+              records.map((post) => ({
+                slug: post.slug,
+                title: post.title,
+                date: post.date || post.created,
+                author: {
+                  name: post.author_name || "Admin",
+                  picture: post.author_picture || "",
+                },
+                coverImage: post.cover_image || "",
+                excerpt: post.excerpt || "",
+              })),
+            );
+          })
+          .catch(console.error);
+      })
+      .catch(console.error);
   }, []);
 
   if (!s) {
     return (
-      <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ minHeight: "100vh" }}
+      >
         <div className="spinner-border text-primary" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>

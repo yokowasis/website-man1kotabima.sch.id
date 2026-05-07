@@ -66,6 +66,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.0.6
         version: 18.3.7(@types/react@18.3.27)
+      '@yokowasis/types-webcomponents':
+        specifier: ^1.0.54
+        version: 1.0.54
       autoprefixer:
         specifier: ^10.4.7
         version: 10.4.22(postcss@8.5.6)
@@ -373,6 +376,9 @@ packages:
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
+
+  '@yokowasis/types-webcomponents@1.0.54':
+    resolution: {integrity: sha512-iPN6Do4funYLWGqJVnsvaEMPox906/IX1QMKgWcUnVF/k3MFTiKTuXmg7AWnvX9wRH0jSytToDhFSOe4G0cGrw==}
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -1753,6 +1759,8 @@ snapshots:
       csstype: 3.2.3
 
   '@types/unist@2.0.11': {}
+
+  '@yokowasis/types-webcomponents@1.0.54': {}
 
   abort-controller@3.0.0:
     dependencies:
