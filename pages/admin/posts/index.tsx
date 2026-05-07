@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import AdminLayout from "../../../components/adminlayout";
 import { adminSidebar } from "../../../lib/admin-sidebar";
 import { DataPosts } from "../../../lib/tables/posts";
 
 export default function PostsPage() {
+  const router = useRouter();
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
       try {
-        const result = await DataPosts.read(1, 200);
+        const result = await DataPosts.read(1, 200, "", "-updated", "id,title,slug,updated");
         setData(result.items || []);
       } catch (err) {
         console.error("Failed to load posts:", err);
@@ -21,7 +23,7 @@ export default function PostsPage() {
   }, []);
 
   const refreshData = async () => {
-    const result = await DataPosts.read(1, 200);
+    const result = await DataPosts.read(1, 200, "", "-updated", "id,title,slug,updated");
     setData(result.items || []);
   };
 
@@ -33,65 +35,26 @@ export default function PostsPage() {
       if (!table) return;
 
       table.columns = [
-        { key: "id", title: "ID", type: "text", readonly: true, hidden: true },
-        { key: "title", title: "Title", type: "text" },
-        { key: "slug", title: "Slug", type: "text", placeholder: "auto-generated from title" },
-        { key: "excerpt", title: "Excerpt", type: "text" },
-        { key: "content", title: "Content", type: "rtf" },
-        { key: "cover_image", title: "Cover Image", type: "upload" },
-        { key: "author_name", title: "Author", type: "text" },
-        { key: "date", title: "Date", type: "date" },
         {
-          key: "created",
-          title: "Created",
+          key: "title",
+          title: "Title",
           type: "text",
-          readonly: true,
-          hideColumn: true,
+          renderer: (value: string, row: any) =>
+            `<a href="/admin/posts/edit?id=${row.id}" style="color:inherit;text-decoration:none;font-weight:500;">${value || "Untitled"}</a>`,
         },
+        {
+          key: "updated",
+          title: "Updated",
+          type: "text",
+          renderer: (value: string) => value ? new Date(value).toLocaleString() : "—",
+        },
+        { key: "id", title: "ID", hidden: true },
+        { key: "slug", title: "Slug", hidden: true },
       ];
 
       table.data = data;
 
-      table.onAdd = async (payload: any) => {
-        try {
-          const record = await DataPosts.create({
-            title: payload.title || "Untitled",
-            slug: payload.slug || payload.title?.toLowerCase().replace(/\s+/g, "-") || "untitled",
-            content: payload.content || "",
-            excerpt: payload.excerpt || "",
-            cover_image: payload.cover_image || "",
-            author_name: payload.author_name || "",
-            date: payload.date || new Date().toISOString().split("T")[0],
-          });
-          await refreshData();
-          (window as any).toast?.success?.("Post created!");
-          return { ...payload, id: record.id, created: record.created };
-        } catch (err: any) {
-          (window as any).toast?.error?.(err?.message || "Failed to create post");
-          return false;
-        }
-      };
-
-      table.onEdit = async (payload: any, previous: any) => {
-        try {
-          await DataPosts.update(previous.id, {
-            title: payload.title,
-            slug: payload.slug,
-            content: payload.content,
-            excerpt: payload.excerpt,
-            cover_image: payload.cover_image,
-            author_name: payload.author_name,
-            date: payload.date,
-          });
-          await refreshData();
-          (window as any).toast?.success?.("Post updated!");
-          return payload;
-        } catch (err: any) {
-          (window as any).toast?.error?.(err?.message || "Failed to update post");
-          return false;
-        }
-      };
-
+      // No onEdit — separate edit page
       table.onDelete = async (row: any) => {
         try {
           await DataPosts.delete(row.id);
@@ -129,13 +92,31 @@ export default function PostsPage() {
       sidebar={adminSidebar}
       activePath="/admin/posts"
     >
-      <h1>Posts Management</h1>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
+        <h1 style={{ margin: 0 }}>Posts Management</h1>
+        <a
+          href="/admin/posts/add"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.35rem",
+            padding: "0.5rem 1rem",
+            background: "var(--primary, #18181b)",
+            color: "var(--primary-foreground, #fafafa)",
+            borderRadius: "0.5rem",
+            textDecoration: "none",
+            fontSize: "0.875rem",
+            fontWeight: 500,
+          }}
+        >
+          + Add Post
+        </a>
+      </div>
       <cs-data-table
         id="posts-table"
         title="All Posts"
         page-size="20"
         page-size-options="10,20,50,100"
-        download="true"
       ></cs-data-table>
     </AdminLayout>
   );
