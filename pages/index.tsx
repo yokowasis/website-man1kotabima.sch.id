@@ -22,7 +22,7 @@ export default function Index({ slugs: _slugs }: Props) {
     DataSettings.loadAll().then(setS).catch(console.error);
 
     // Fetch posts on client side
-    import("../lib/tables/posts.js")
+    import("../lib/tables/posts")
       .then(({ DataPosts }) => {
         DataPosts.all()
           .then((records: any[]) => {
